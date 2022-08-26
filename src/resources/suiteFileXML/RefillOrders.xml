@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Refill_Create_Cancel_">
+
+	<test name="CustomerOnboardingSBC" enabled="false">
+		<classes>
+			<class name="com.ibm.Test.CustomerOnboardingSBC" />
+		</classes>
+	</test>
+
+	<test name="CreateRefillOrder" enabled="true">
+		<classes>
+			<class name="com.ibm.Test.Refill.CreateRefillOrder" />
+		</classes>
+	</test>
+
+	<test name="CancelRefillOrder" enabled="true">
+		<classes>
+			<class name="com.ibm.Test.Refill.CancelRefillOrder" />
+		</classes>
+	</test>
+
+</suite> 

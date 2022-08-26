@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="NFR_FTL_Suite_">
+
+    <test name="CustomerOnboardingSBC" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.CustomerOnboardingSBC"/>
+        </classes>
+    </test>
+
+    <test name="NFROrder" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.NFR_FTL.NFROrder"/>
+        </classes>
+    </test>
+
+    <test name="FTLOrder" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.NFR_FTL.FTLOrder"/>
+        </classes>
+    </test>
+
+    <test name="FTL_AccountOnboarding" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.NFR_FTL.FTL_AccountOnboarding"/>
+        </classes>
+    </test>
+
+</suite> 

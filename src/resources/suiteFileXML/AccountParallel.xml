@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AccountOnBoarding" parallel="tests" thread-count="3">
+
+	<test name="Test-class test2">
+		<classes>
+			<class name="com.ibm.Test.CustomerOnboardingSBC" />
+		</classes>
+	</test>
+
+	<test name="Test-class test3">
+		<classes>
+			<class name="com.ibm.Test.CustomerOnboardingSBC" />
+		</classes>
+	</test>
+
+	<test name="Test-class test4">
+		<classes>
+			<class name="com.ibm.Test.CustomerOnboardingSBC" />
+		</classes>
+	</test>
+
+	<!-- <test name="Test-class test1"> <classes> <class name="com.ibm.Test.AccountOnboarding_Commercial" 
+		/> </classes> </test> <test name="Test-class test2"> <classes> <class name="com.ibm.Test.AccountOnboarding_Exepmted" 
+		/> </classes> </test> <test name="Test-class test3"> <classes> <class name="com.ibm.Test.AccountOnboarding_Reticulated" 
+		/> </classes> </test> -->
+
+</suite> 

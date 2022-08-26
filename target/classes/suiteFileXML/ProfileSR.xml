@@ -1,0 +1,84 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ProfileSR_Suite_">
+
+   <test name="CustomerOnboardingSBC" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.CustomerOnboardingSBC"/>
+        </classes>
+    </test>
+
+    <test name="SR_AadharDeLinking" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_AadharDeLinking"/>
+        </classes>
+    </test>
+
+    <test name="SR_AadharSeeding" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_AadharSeeding_1"/>
+        </classes>
+    </test>
+
+    <test name="SR_AadharSeeding_FO_Approval_2" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_AadharSeeding_FO_Approval_2"/>
+        </classes>
+    </test>
+
+    <test name="SR_AadharSeeding_FO_Reject_3" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_AadharSeeding_FO_Reject_3"/>
+        </classes>
+    </test>
+
+    <test name="SR_BankSeeding_1" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_BankSeeding_1"/>
+        </classes>
+    </test>
+
+    <test name="SR_BankSeeding_FO_Approval_2" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_BankSeeding_FO_Approval_2"/>
+        </classes>
+    </test>
+
+    <test name="SR_BankSeeding_FO_Reject_3" enabled="false">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_BankSeeding_FO_Reject_3"/>
+        </classes>
+    </test>
+
+    <test name="SR_CustomerProfileUpdateAddress" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_CustomerProfileUpdateAddress"/>
+        </classes>
+    </test>
+
+    <test name="SR_CustomerProfileUpdateEmail" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_CustomerProfileUpdateEmail"/>
+        </classes>
+    </test>
+
+    <test name="SR_CustomerProfileUpdatePhoneNumber" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_CustomerProfileUpdatePhoneNumber"/>
+        </classes>
+    </test>
+
+    <test name="SR_CustomerProfileUpdatePinChange" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_CustomerProfileUpdatePinChange"/>
+        </classes>
+    </test>
+
+    <test name="SR_CustomerNameChangeSecondTime" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.SR.SR_CustomerNameChangeSecondTime"/>
+        </classes>
+    </test>
+
+</suite> 

@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CustomerOnBoarding" parallel="tests" thread-count="2">
+
+	<test name="Test-class test1" enabled="true">
+		<classes>
+			<class name="com.ibm.Test.CustomerOnboardingSBC" />
+		</classes>
+	</test>
+
+	<test name="Test-class test2" enabled="true">
+		<classes>
+			<class name="com.ibm.Test.CustomerOnboardingSBC" />
+		</classes>
+	</test>
+
+
+</suite> 

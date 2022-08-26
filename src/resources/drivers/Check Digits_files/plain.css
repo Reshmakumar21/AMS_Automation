@@ -1,0 +1,91 @@
+/* Netscape 4 doesn't correctly resolve URL's relative to the
+   location of this style file, but relative to the page which
+   references it, so it doesn't always find the background image
+   if we specify it here -- do it in the BODY tag of the page itself.
+ */
+/* BODY { background: #dcdcdc; }  */ /* color = gainsboro */
+/* BODY { background: cadetblue; }  */
+/* BODY { background: whitesmoke; }  */
+BODY { background: ivory; }
+
+
+/* Default font settings. */
+
+/* Netscape 4.04 (and earlier?) doesn't correctly inherit
+   font settings from the BODY tag -- list them all here. */
+BODY, P, DL, DT, DD, DIR, OL, UL, MENU, LI, TABLE, TD,
+ADDRESS, BLOCKQUOTE, FORM, DIV
+{	font-family: arial, helvetica, sans-serif;
+	/* font-family: "New Century Schoolbook", "Times", serif; */
+	/* font-weight: 400; */
+	/* color: navy;  */
+	color: darkslategray;
+	/* color: darkslateblue; */
+}
+
+H1, H2, H3, H4, H5, H6, CAPTION, TH
+{	font-family: arial, helvetica, sans-serif;
+	/* color: #600080; */       /* close to purple */
+	color: darkslateblue;
+	/* color: indigo; */
+}
+
+H1, H2, H3, TH { text-align: center; }
+
+H1, H2, H3, H4, CAPTION, TH
+{	font-variant: small-caps;   /* Doesn't work with either
+					Netscape 4.04 or IE 3.02 */
+}
+
+H1 { font-size: 24pt; }
+H2 { font-size: 18pt; }
+H3 { font-size: 16pt; }
+H4 { font-size: 16pt; }
+H5 { font-size: 14pt; }
+H6 { font-size: 12pt; }
+
+ADDRESS { font-size: 10pt; }
+
+PRE, TT, CODE
+{     font-family: Courier;
+      font-size: 12pt;
+      font-variant: normal;  /* not small caps in a heading */
+}
+
+CAPTION { font-weight: bold; }
+
+/* Doesn't work on Netscape 4. */
+DT { font-weight: bold; }
+
+
+/* Settings for LI elements govern the bullets or numbers of items. */
+/* Doesn't work on IE 3; Netscape 4 gives a square bullet. */
+/* LI { list-style: url("../images/triangle_bullet.gif") square } */
+
+/* .block_indent { margin-left: 3em; }          -- underscores are illegal characters in style names */
+.block-indent { margin-left: 3em; }
+
+
+/* Example: Only text which is marked both P and STRONG is affected. */
+/* P STRONG { color : green } */
+
+/* Wild example */
+P.special {
+   color : green;
+   border: solid red;
+   }
+
+
+/* Example: In Netscape 4, OL and UL govern the list items (the text),
+   while LI governs the bullets or numbers.  In IE 3, OL and UL
+   govern both the bullets/numbers and the text. */
+/* OL, UL { color : red; } */
+
+
+/* Example: Style of the entries (text) in a table. */
+/* TD { color : fuchsia; } */
+
+SPAN.heading { font-variant: small-caps;
+               font-weight: bold;  }
+
+SPAN.literal { color: purple; }

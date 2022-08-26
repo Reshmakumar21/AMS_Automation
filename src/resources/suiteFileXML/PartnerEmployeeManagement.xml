@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PartnerEmployeeManagement_Suite_">
+
+    <test name="PartnerEmployeeDeliveryBoy" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.PartnerEmployeeManagement.PartnerEmployeeDeliveryBoy"/>
+        </classes>
+    </test>
+
+    <test name="PartnerEmployeeManager" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.PartnerEmployeeManagement.PartnerEmployeeManager"/>
+        </classes>
+    </test>
+
+    <test name="PartnerEmployeeShowroomStaff" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.PartnerEmployeeManagement.PartnerEmployeeShowroomStaff"/>
+        </classes>
+    </test>
+
+    <test name="PartnerEmployeeTerminate" enabled="true">
+        <classes>
+            <class name="com.ibm.Test.PartnerEmployeeManagement.PartnerEmployeeTerminate"/>
+        </classes>
+    </test>
+
+</suite> 
