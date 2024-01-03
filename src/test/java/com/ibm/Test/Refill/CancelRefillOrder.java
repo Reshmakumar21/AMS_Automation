@@ -15,8 +15,8 @@ import com.ibm.automation.TestSessionInitiator;
 
 /**
  * The Class CancelRefillOrder.
- * 
- * 
+ *
+ *
  */
 public class CancelRefillOrder extends SuperTest {
 	/** The test. */

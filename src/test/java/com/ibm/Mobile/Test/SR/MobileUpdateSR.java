@@ -28,35 +28,35 @@ public class MobileUpdateSR extends SuperTest {
 		System.out.println("***********Before Class ********");
 		System.out.println();
 		Utilities.setYamlFilePath("integration_testData.yml");
-		
+
 	}
 
 	/**
 	 * Test Case 01 enter login info.
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	@Test
 	public void TC00_LaunchEmulator() throws Exception {
 		ScreenRecorderUtil.startRecord("TC00_LaunchEmulator");
-		Utilities.LaunchEmulator();		
+		Utilities.LaunchEmulator();
 	}
-	
+
 	@Test
 	public void TC01_SetUpEmulatorSession() {
 		test = new TestSessionInitiator("mobile");
-		
+
 	}
-	
+
 	@Test
 	public void TC02_loginToMobileApp() {
 		test.mobileActions.loginToInformation();
-		
+
 	}
 	@Test
 	public void TC03_createMobileUpdateSR() {
 		test.mobileActions.UpdateMobileNumber();
 		relNumber = "7200000000012316";
-		
+
 	}
 	@Test
 	public void TC04_closeEmulator() {
@@ -71,7 +71,7 @@ public class MobileUpdateSR extends SuperTest {
 		test.launchApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".URL"));
 		test.login.LoginToApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".UserName"),
 				test.getYamlVal("" + test.getYamlVal("environment") + ".Password"));
-		test.homePage.verifyHomePageDisplay();		
+		test.homePage.verifyHomePageDisplay();
 		test.contactPage.naviagteToContactTab();
 	}
 
@@ -95,4 +95,4 @@ public class MobileUpdateSR extends SuperTest {
 
 
 }
- 
+

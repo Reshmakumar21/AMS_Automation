@@ -9,7 +9,14 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,7 +31,7 @@ public class SeleniumWait {
 
 	/**
 	 * Instantiates a new selenium wait.
-	 * 
+	 *
 	 * @param driver
 	 *            the driver
 	 */
@@ -34,7 +41,7 @@ public class SeleniumWait {
 
 	/**
 	 * Gets the when visible.
-	 * 
+	 *
 	 * @param locator
 	 *            the locator
 	 * @param timeout
@@ -49,12 +56,12 @@ public class SeleniumWait {
 		WebDriverWait wait = new WebDriverWait(driver, timeout);
 		element = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(locator));
-		
+
 		return element;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Gets the when visible.
 	 *
@@ -112,7 +119,7 @@ public class SeleniumWait {
 
 	/**
 	 * Gets the when clickable.
-	 * 
+	 *
 	 * @param locator
 	 *            the locator
 	 * @param timeout
@@ -125,16 +132,16 @@ public class SeleniumWait {
 		element = wait.until(ExpectedConditions.elementToBeClickable(locator));
 		return element;
 	}
-	
+
 	public WebElement getWhenClickable(WebElement element) {
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		return (WebElement) wait.until(ExpectedConditions.elementToBeClickable(element));
+		return wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 	/**
 	 * Click when ready.
-	 * 
+	 *
 	 * @param locator
 	 *            the locator
 	 * @param timeout
@@ -193,7 +200,7 @@ public class SeleniumWait {
 						TimeUnit.SECONDS);
 		return element;
 	}
-	
+
 	/**
 	 * Checks if is alert present.
 	 *
@@ -216,7 +223,7 @@ public class SeleniumWait {
 		}
 		return foundAlert;
 	}
-	
+
 	/**
 	 * Wait for document to load.
 	 */
@@ -224,7 +231,7 @@ public class SeleniumWait {
 		waitLong((int )1.25);
 		getWhenVisible(By.xpath("//*"), 120);
 	}
-	
+
 	public void waitLong(int i) {
 		try {
 			Thread.sleep(i * 1000);
@@ -240,7 +247,7 @@ public class SeleniumWait {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String output;
 		for (int i = 0; i < 100; i++) {
-			output = (String) js.executeScript("return document.getElementsByTagName('html')[0].className").toString();
+			output = js.executeScript("return document.getElementsByTagName('html')[0].className").toString();
 			if (output.contains("siebui-navigation-tab") && !(output.contains("siebui-busy"))) {
 				if (!(i == 0)) {
 					System.out.println("WorkFlow Timeout : " + i * 2 + " seconds");
@@ -251,7 +258,7 @@ public class SeleniumWait {
 			}
 		}
 	}
-	
+
 	/**
 	 * Wait for portal cursor to disappear.
 	 */

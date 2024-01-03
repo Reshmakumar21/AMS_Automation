@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ibm</groupId>
@@ -16,20 +14,29 @@
 		<testxml>testng.xml</testxml>
 		<seleniumver>3.141.59</seleniumver>
 		<java-version>1.8</java-version>
+		<suiteXmlFile>CustomerOnBoardingSBC</suiteXmlFile>
 	</properties>
+
 	<dependencies>
-        <!-- https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j -->
-        <dependency>
-             <groupId>net.sourceforge.tess4j</groupId>
-             <artifactId>tess4j</artifactId>
-             <version>5.2.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.stephenc.monte/monte-screen-recorder -->
-        <dependency>
-             <groupId>com.github.stephenc.monte</groupId>
-             <artifactId>monte-screen-recorder</artifactId>
-             <version>0.7.7.0</version>
-        </dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		
+		<dependency>
+  			<groupId>org.seleniumhq.selenium</groupId>
+  			<artifactId>selenium-api</artifactId>
+  			<version>3.141.59</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j -->
+		<dependency>
+			<groupId>net.sourceforge.tess4j</groupId>
+			<artifactId>tess4j</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.stephenc.monte/monte-screen-recorder -->
+		<dependency>
+			<groupId>com.github.stephenc.monte</groupId>
+			<artifactId>monte-screen-recorder</artifactId>
+			<version>0.7.7.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -42,11 +49,25 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 		<dependency>
-			<groupId>io.appium</groupId>
-			<artifactId>java-client</artifactId>
-			<version>7.4.0</version>
+    		<groupId>io.appium</groupId>
+    		<artifactId>java-client</artifactId>
+    		<version>7.4.0</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -85,30 +106,36 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<!-- <version>6.14.3</version> -->
-			<version>7.1.0</version>
-
+			<version>6.14.3</version>
+			<!--version>6.14.3</version-->
+			<!--version>7.6.1</version-->
 			<scope>test</scope>
+			<!--scope>compile</scope-->
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
 			<version>${seleniumver}</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+    		<groupId>org.seleniumhq.selenium</groupId>
+    		<artifactId>selenium-java</artifactId>
+    		<version>3.141.59</version>
+		</dependency>
+
+		
 		<dependency>
 			<groupId>com.oracle.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
 			<version>12.2.0.1</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/src/resources/drivers/ojdbc8-12.2.0.1.jar</systemPath>
+			<systemPath>C:\Users\0047HE744\Desktop\Personal\MyLearning\AMS_Automation\src\resources\drivers\ojdbc8-12.2.0.1.jar</systemPath>
+			<!-- <systemPath>${project.basedir}/src/resources/drivers/ojdbc8-12.2.0.1.jar</systemPath> -->
 		</dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.1.0</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -163,9 +190,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.0</version>
+				<version>3.0.0-M7</version>
 				<configuration>
 					<suiteXmlFiles>
+
+						<!--TODO-->
+
 						<suiteXmlFile>src/resources/suiteFileXML/${suiteXmlFile}.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<skip>false</skip>

@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.UI;
 
@@ -146,7 +146,7 @@ public class HomePageUI extends BaseUIPage {
 
 	@FindBy(xpath = "//*[@title='Invoice List Applet']//table[@summary='Invoice']//td[contains(@id,'Cash_Memo_Status')]")
 	public WebElement txt_ReturnField;
-	
+
 	@FindBy(xpath = "//*[@id='_sweappmenu']//*[@name='Root']")
 	public WebElement btn_UserNameUI;
 
@@ -155,7 +155,7 @@ public class HomePageUI extends BaseUIPage {
 
 	@FindBy(xpath = "//*[@title='Sales Order List Applet']//table[@summary='Sales Order']//tr[2]//*[contains(@name,'Refill Order')]")
 	public WebElement lnk_OpenRefillOrder;
-	
+
 	/**
 	 * Btn relationships query button.
 	 *
@@ -178,8 +178,8 @@ public class HomePageUI extends BaseUIPage {
 		waitLong(1);
 		expWait.getWhenVisible(By.xpath("//*"), 120);
 	}
-	
-	
+
+
 
 	/**
 	 * Wait for home page sipper to disapper.
@@ -188,7 +188,7 @@ public class HomePageUI extends BaseUIPage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String output;
 		for (int i = 0; i < 100; i++) {
-			output = (String) js.executeScript("return document.getElementsByTagName('html')[0].className").toString();
+			output = js.executeScript("return document.getElementsByTagName('html')[0].className").toString();
 			if (output.contains("siebui-navigation-tab") && !(output.contains("siebui-busy"))) {
 				if (!(i == 0)) {
 					System.out.println("WorkFlow Timeout : " + i * 2 + " seconds");

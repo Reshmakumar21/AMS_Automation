@@ -14,7 +14,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -304,11 +303,11 @@ public class UjvalaCustomerOnboardingActions extends BaseAction{
 		contactTab.btn_NewRelationShip.click();
 		contactTab.lnk_ReationShipAgainst.isDisplayed();
 		contactTab.lnk_ReationShipAgainst.sendKeys(Keys.TAB);
-		
+
 		contactTab.txt_ReationShipAppletAddress.click();
 		contactTab.txt_ReationShipAppletAddress.findElement(By.tagName("input")).click();
 		contactTab.txt_ReationShipAppletAddress.findElement(By.tagName("span")).click();
-		
+
 //		contactTab.txt_ReationShipAppletAddressSearchIcon.click();
 		contactTab.btn_RealtionShipAddressOKButton.click();
 		expWait.waitForDomToLoad();
@@ -335,6 +334,7 @@ public class UjvalaCustomerOnboardingActions extends BaseAction{
 	/**
 	 * Perform save.
 	 */
+	@Override
 	public void performSave() {
 		try {
 			Actions keyAction = new Actions(driver);
@@ -414,7 +414,7 @@ public class UjvalaCustomerOnboardingActions extends BaseAction{
 				expWait.waitForHomePageSipperToDisapper();
 			}
 		}
-		driver.switchTo().frame((WebElement)driver.findElement(By.xpath("//*[contains(@title,'Manage Contact Attachments')]//iframe")));
+		driver.switchTo().frame(driver.findElement(By.xpath("//*[contains(@title,'Manage Contact Attachments')]//iframe")));
 		driver.findElement(By.xpath("//a[text()='New']")).click();
 		expWait.waitForDomToLoad();
 		expWait.waitForDomToLoad();
@@ -450,7 +450,7 @@ public class UjvalaCustomerOnboardingActions extends BaseAction{
 		}
 		expWait.waitForDomToLoad();
 		expWait.waitForHomePageSipperToDisapper();
-		driver.switchTo().frame((WebElement)driver.findElement(By.xpath("//*[contains(@title,'Manage Contact Attachments')]//iframe")));
+		driver.switchTo().frame(driver.findElement(By.xpath("//*[contains(@title,'Manage Contact Attachments')]//iframe")));
 		driver.findElement(By.xpath("//table//a[contains(text(),'Attach')]")).isDisplayed();
 	}
 

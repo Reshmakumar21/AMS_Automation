@@ -1,11 +1,12 @@
 package com.ibm.Test.Retail.PAM.DealerScenarios;
 
-import com.ibm.Utilities.Utilities;
-import com.ibm.automation.SuperTest;
-import com.ibm.automation.TestSessionInitiator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.ibm.Utilities.Utilities;
+import com.ibm.automation.SuperTest;
+import com.ibm.automation.TestSessionInitiator;
 
 /**
  * The Retail PAM_CCTV_FO_Reject test class.
@@ -48,7 +49,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC02_NavigateToPartnerRelationshipsView() {
-        
+
         test.retailPage.navigateToPartnerRelationships();
     }
 
@@ -58,7 +59,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC03_DrillDownToPartnerName() {
-        
+
         test.retailPage.drillDownPartnerName();
     }
 
@@ -67,7 +68,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC04_ClickOnInstalledAssetTab() {
-        
+
         test.retailPage.navigateToInstalledAssetsTab();
     }
 
@@ -77,7 +78,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC05_CreateNewAsset() {
-        
+
         test.retailPage.createNewAsset();
 
     }
@@ -88,7 +89,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC06_SelectProduct() {
-        
+
         test.retailPage.addProduct("CCTV");
         test.retailPage.inputProductLineItemValuesFor("CCTV");
     }
@@ -99,7 +100,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC07_AddAttributes() {
-        
+
         test.retailPage.addAttributesDetails("CCTV");
     }
 
@@ -108,7 +109,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC08_ClickSubmitButton() {
-        
+
         test.retailPage.clickSubmitButton();
     }
 
@@ -117,7 +118,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC09_FODecision() {
-        
+
         test.retailPage.FORetailDecision("Reject");
     }
 
@@ -126,7 +127,7 @@ public class PAM_CCTV_FO_Reject extends SuperTest {
      */
     @Test
     public void TC10_Validations() {
-        
+
         test.retailPage.validations();
     }
 

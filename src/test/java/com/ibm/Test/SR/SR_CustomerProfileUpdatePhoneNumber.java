@@ -34,7 +34,7 @@ public class SR_CustomerProfileUpdatePhoneNumber extends SuperTest {
 
 		/**
 		 * TC 00 set up.
-		 * 
+		 *
 		 * @throws Exception
 		 */
 		@BeforeClass
@@ -63,7 +63,7 @@ public class SR_CustomerProfileUpdatePhoneNumber extends SuperTest {
 	/* TC 02 search for relation ship. */
 	@Test
 	public void TC02_SearchForRelationShip() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 	}
@@ -71,7 +71,7 @@ public class SR_CustomerProfileUpdatePhoneNumber extends SuperTest {
 	/* TC Drilldown last name */
 	@Test
 	public void TC03_LastNameDrillDown() {
-		
+
 		test.contactPage.afterRelationShipSearchClickOnLastName();
 	}
 
@@ -98,49 +98,49 @@ public class SR_CustomerProfileUpdatePhoneNumber extends SuperTest {
 	/* TC select transaction type under Service Request List Applet */
 	@Test
 	public void TC07_SelectTransactionType() {
-		
+
 		test.profileSRPage.selectTransactionType("Customer Profile Update");
 	}
 
 	/* TC select transaction sub type under Service Request List Applet */
 	@Test
 	public void TC08_SelectTransactionSubType() {
-		
+
 		test.profileSRPage.selectTransactionSubType("Phone Number");
 	}
 
 	/* TC Drill down SR Number under Service Request List Applet */
 	@Test
 	public void TC09_DrillDownSRNumber() {
-		
+
 		test.profileSRPage.drillDownSRNumber();
 	}
 
 	/* TC perform phone number update activity */
 	@Test
 	public void TC10_PhoneNumberChange() {
-		
+
 		test.profileSRPage.phoneNumberChange();
 	}
 
 	/* Click submit button */
 	@Test
 	public void TC11_ClickSubmit() {
-		
+
 		test.profileSRPage.submitSR();
 	}
 
 	/* Verify profile SR status */
 	@Test
 	public void TC12_VerifyProfileSRStatus() {
-		
+
 		test.profileSRPage.verifySRStatus("Closed");
 	}
 
 	/* Verify MDM */
 	@Test@Ignore
 	public void TC13_VerifyMDM() {
-		
+
 		test.profileSRPage.verifyMDM("phone");
 	}
 

@@ -7,21 +7,22 @@
 package com.ibm.Actions;
 
 
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import com.aventstack.extentreports.Status;
 import com.ibm.UI.ContactTabUI;
 import com.ibm.UI.HomePageUI;
 import com.ibm.UI.ProfileServiceRequestUI;
 import com.ibm.UI.RetailUI;
 import com.ibm.Utilities.LoggerWriter;
-import com.ibm.Utilities.Utilities;
-import org.testng.Assert;
-import org.openqa.selenium.*;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
 
 /**
  * The Class RetailAction.

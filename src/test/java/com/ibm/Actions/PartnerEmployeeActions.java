@@ -6,15 +6,16 @@
  */
 package com.ibm.Actions;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import com.aventstack.extentreports.Status;
 import com.ibm.UI.ContactTabUI;
 import com.ibm.UI.HomePageUI;
 import com.ibm.UI.PartnerEmployeeUI;
 import com.ibm.Utilities.LoggerWriter;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 /**
  * The Class PartnerEmployeeActions.
@@ -161,7 +162,7 @@ public class PartnerEmployeeActions extends BaseAction {
 
         alertVerificationAndAcceptAlert(20);
 
-        if (flag == true) {
+        if (flag) {
             partnerEmpPage.btn_PositionOccupiedOK.click();
         }
         //expWait.waitForDomToLoad();

@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Rohit Thakur
  * @version 1.0
  * @since   2020-03-19
- * 
+ *
  */
 package com.ibm.Test.LOKAM;
 

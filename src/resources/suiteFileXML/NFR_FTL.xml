@@ -3,7 +3,12 @@
 
 <suite name="NFR_FTL_Suite_">
 
-    <test name="CustomerOnboardingSBC" enabled="false">
+    <test name="CustomerOnboardingSBC" enabled="true">
+    	<groups>
+			<run>
+				<include name="minimal" />
+			</run>
+		</groups>
         <classes>
             <class name="com.ibm.Test.CustomerOnboardingSBC"/>
         </classes>

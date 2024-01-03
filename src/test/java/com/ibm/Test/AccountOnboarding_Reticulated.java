@@ -46,7 +46,7 @@ public class AccountOnboarding_Reticulated extends SuperTest {
 
 	/** The account name. */
 	/**
-	 
+
 	 */
 	@Test
 	public void TC02_NavigateToContactTab() {
@@ -201,11 +201,11 @@ public class AccountOnboarding_Reticulated extends SuperTest {
 		try {
 			Utilities.writeRelationShipNumberInTxtFile(relNumber, test.getYamlVal("environment").toLowerCase());
 			if (test.getYamlVal("Debug").toLowerCase().contains("no")) {
-				
+
 			}
 		} catch (Exception e) {
 		}
-		
+
 		test.closeBrowserSession();
 	}
 }

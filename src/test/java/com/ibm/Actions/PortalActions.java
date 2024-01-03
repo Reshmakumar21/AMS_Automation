@@ -6,6 +6,19 @@
  */
 package com.ibm.Actions;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import com.aventstack.extentreports.Status;
 import com.ibm.UI.ContactTabUI;
 import com.ibm.UI.HomePageUI;
@@ -13,19 +26,18 @@ import com.ibm.UI.PortalUI;
 import com.ibm.UI.ProfileServiceRequestUI;
 import com.ibm.Utilities.AadharGenie;
 import com.ibm.Utilities.LoggerWriter;
+import com.ibm.Utilities.SeleniumWait;
 import com.ibm.Utilities.Utilities;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * The Class PortalActions.
  */
 public class PortalActions extends BaseAction {
+
+	/**
+	 * PR number
+	 */
+	public String PR_num;
     /**
      * The contact tab.
      */
@@ -51,6 +63,10 @@ public class PortalActions extends BaseAction {
      */
     protected ProfileServiceRequestAction profileSR;
     /**
+     * Selenium wait
+     */
+    protected SeleniumWait selwait;
+    /**
      * The driver.
      */
     WebDriver driver;
@@ -63,6 +79,7 @@ public class PortalActions extends BaseAction {
      * new emailId generated.
      */
     String emailId;
+    String screenshot = ".ss1";
     /**
      * new phone number generated.
      */
@@ -98,7 +115,7 @@ public class PortalActions extends BaseAction {
         portUI.lnk_LPG.click();
         expWait.waitForCursorToDisappear();
         expWait.waitForDomToLoad();
-        
+
 
         //store relation ship ID.
         //relNumber = portUI.txt_relationShipID.getAttribute("textContent").trim();
@@ -503,7 +520,8 @@ public class PortalActions extends BaseAction {
     /**
      * Siebel Login.
      */
-    public ArrayList<String> siebelLogin() {
+    @SuppressWarnings("unchecked")
+	public ArrayList<String> siebelLogin() {
         return loginAction.loginSiebel();
     }
 
@@ -634,4 +652,162 @@ public class PortalActions extends BaseAction {
 
 
 
+    /***********************************RESHMA K*****************************/
+
+    /*
+     * Partner Portal - Sales Order - With Contract
+     * */
+
+    public void selectPosition() {
+        //expWait.waitForCursorToDisappear();
+        expWait.waitForDomToLoad();
+
+        portUI.Company_Name.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.Company_Name_option.click();
+        //expWait.waitForCursorToDisappear();
+        expWait.waitForDomToLoad();
+
+        portUI.Site_name.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.Site_name_option.click();
+        //expWait.waitForCursorToDisappear();
+        expWait.waitForDomToLoad();
+
+        portUI.Partner_type.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.Partner_type_option.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.Submit_position.click();
+        //expWait.waitForCursorToDisappear();
+        expWait.waitForDomToLoad();
+    }
+
+    public void selectCustomer() {
+    	expWait.waitForDomToLoad();
+
+    	portUI.Search_customer.sendKeys("0000323513");
+    	portUI.Search_customer.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.Select_customer.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+    }
+
+    public void navigateToSalesOrder() {
+    	//expWait.waitForDomToLoad();
+
+    	portUI.Order.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.Create_sales_order.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+    }
+
+    public void selectContract() {
+    	//expWait.waitForDomToLoad();
+
+    	portUI.with_contract.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+    }
+
+    public void withContract() {
+    	//expWait.waitForDomToLoad();
+
+    	portUI.fetch_contract.click();
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.select_contract.click();
+
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.Quantity.sendKeys("5");
+        //expWait.waitForCursorToDisappear();
+        //expWait.waitForDomToLoad();
+
+        portUI.fetch_price.click();
+        expWait.waitForCursorToDisappear();
+        expWait.waitForDomToLoad1();
+        //expWait.waitForHomePageSipperToDisapper();
+        portUI.mode_of_transport.click();
+        portUI.mode_of_transport_road.click();
+        portUI.Continue_sales.click();
+        expWait.waitForDomToLoad();
+        portUI.Confirm_order.click();
+    }
+
+    public void OrderConfirmation() {
+        expWait.waitForDomToLoad();
+        portUI.PR_number.isEnabled();
+        expWait.waitForDomToLoad();
+        PR_num = portUI.PR_number.getText();
+        portUI.Ok_button.click();
+        System.out.println(PR_num);
+    }
+
+    public void PRNumber() throws IOException {
+    	String exc = "C:\\Users\\0047HE744\\Desktop\\Personal\\MyLearning\\AMS_Automation\\src\\test\\java\\com\\ibm\\Test\\PetChem\\data.xlsx";
+    	FileInputStream inputstream = new FileInputStream(exc);
+    	try (XSSFWorkbook workbook = new XSSFWorkbook(inputstream)) {
+			XSSFSheet sheet = workbook.getSheet("Sheet1");
+			//XSSFRow row = sheet.getRow(0);
+		    Cell cell2Update = sheet.getRow(0).getCell(0);
+		    cell2Update.setCellValue(PR_num);
+		    System.out.println(sheet.getRow(0).getCell(0));
+		}
+    }
+    public void selectwContract() {
+    	expWait.waitForDomToLoad();
+    	portUI.without_contract.click();
+    }
+
+    public void withoutContract() {
+    	expWait.waitForDomToLoad();
+    	portUI.continue_shipping.click();
+    	expWait.waitForDomToLoad();
+    	portUI.plant_type.click();
+    	portUI.plant_type_SAP.click();
+    	//expWait.waitForDomToLoad();
+    	portUI.supply_location.click();
+    	portUI.supply_location.sendKeys("0033");
+    	expWait.waitForDomToLoad();
+    	expWait.waitForCursorToDisappear();
+    	portUI.supply_loc_IOC.click();
+    	expWait.waitForDomToLoad();
+    	portUI.delivery_mode.click();
+    	expWait.waitForDomToLoad();
+    	portUI.payment_term.click();
+    	portUI.payment_term_option.click();
+    	expWait.waitForDomToLoad();
+    	portUI.mode_of_trnsport.click();
+    	portUI.mode_of_transport_road.click();
+    	expWait.waitForDomToLoad();
+    	portUI.Continue_sales.click();
+    	expWait.waitForDomToLoad();
+    	portUI.material.sendKeys("1030RG");
+    	portUI.product_0033.click();
+    	expWait.waitForDomToLoad();
+    	portUI.Quantity.sendKeys("5");
+    	expWait.waitForDomToLoad();
+    	portUI.fetch_price.click();
+    	expWait.waitForDomToLoad();
+    	portUI.Continue_sales.click();
+    	expWait.waitForDomToLoad();
+    	portUI.Confirm_order.click();
+    }
 }

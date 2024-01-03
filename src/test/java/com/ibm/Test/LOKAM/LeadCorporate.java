@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Rohit Thakur
  * @version 1.0
  * @since   2020-03-19
- * 
+ *
  */
 package com.ibm.Test.LOKAM;
 
@@ -29,7 +29,7 @@ public class LeadCorporate extends SuperTest {
 	/** The relationship number. */
 	static String relNumber;
 
-	
+
 	/**
 	 * Test Case 00 set up.
 	 */
@@ -60,7 +60,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC02_NavigateToLeadTab() {
-		
+
 		test.lokamPage.navigateToLeadTab();
 	}
 
@@ -69,7 +69,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC03_CreateNewLead() {
-		
+
 		test.lokamPage.createNewLead();
 	}
 
@@ -78,7 +78,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC04_SearchProspect() {
-		
+
 		test.lokamPage.searchProspectCorporate();
 	}
 
@@ -87,7 +87,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC05_InputProspectDetails() {
-		
+
 		test.lokamPage.inputProspectDetails(
 				test.getYamlVal("NewCustomer.Salutation"),
 				test.getYamlVal("NewCustomer.FirstName"),
@@ -103,7 +103,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC06_ConvertLead() {
-		
+
 		test.lokamPage.convertLead();
 	}
 
@@ -112,7 +112,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC07_NavigateToContact() {
-		
+
 		test.lokamPage.navigateToContact();
 	}
 
@@ -121,7 +121,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC08_PerformContactDedup() {
-		
+
 		test.lokamPage.performContactDedup();
 	}
 
@@ -130,7 +130,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC09_NavigateToOpportunityTab() {
-		
+
 		test.lokamPage.navigateToOpportunityTab();
 	}
 
@@ -139,7 +139,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC10_AccountCreation() {
-		
+
 		String accountName = test.lokamPage.accountCreation();
 		test.accountsPage.addPaymentProfile(accountName);
 		test.accountsPage.accountDedup();
@@ -162,7 +162,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC11_NavigateToContact() {
-		
+
 		test.lokamPage.navigateToContact();
 	}
 
@@ -171,7 +171,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC12_NavigateToOpportunityTab() {
-		
+
 		test.lokamPage.navigateToOpportunityTab();
 	}
 
@@ -180,7 +180,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC13_ConvertOpportunity() {
-		
+
 		test.lokamPage.convertOpportunity();
 	}
 
@@ -189,7 +189,7 @@ public class LeadCorporate extends SuperTest {
 	 */
 	@Test
 	public void TC14_ValidateRelationShip() {
-		
+
 		test.lokamPage.validateRelationShipStatus();
 	}
 
@@ -199,6 +199,6 @@ public class LeadCorporate extends SuperTest {
 	@AfterClass
 	public  void tearDownSession() {
 			test.closeBrowserSession();
-		
+
 	}
 }

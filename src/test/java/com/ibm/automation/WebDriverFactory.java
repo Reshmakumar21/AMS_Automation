@@ -12,13 +12,6 @@ import java.net.URL;
 import java.util.Random;
 import java.util.logging.Level;
 
-import com.ibm.Utilities.Utilities;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.events.EventFiringWebDriverFactory;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -31,6 +24,13 @@ import org.openqa.selenium.logging.LoggingPreferences;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import com.ibm.Utilities.Utilities;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.events.EventFiringWebDriverFactory;
 
 public class WebDriverFactory {
 	public WebDriver getDriver(String browserUse) {
@@ -82,19 +82,20 @@ public class WebDriverFactory {
 		}
 		return null;
 	}
-	
+
 	public  AppiumDriver<MobileElement> getMobileDriver()  {
 		DesiredCapabilities caps = new DesiredCapabilities();
 
 		caps.setCapability("deviceId", "emulator-5554");
-		caps.setCapability("deviceName", "IOCL");
+		caps.setCapability("deviceName", "emulatortest1");
 		caps.setCapability("platformName", "Android");
 		caps.setCapability("ignoreHiddenApiPolicyError", "true");
 		caps.setCapability("autoGrantPermissions", "true");
 		caps.setCapability("app", (new File("consumerapp.apk")).getAbsolutePath());
 		caps.setCapability("appPackage", "cx.indianoil.in");
 		caps.setCapability("appActivity", "cx.indianoil.in.lpg.view.login.WelcomeActivity");
-		caps.setCapability("adbExecTimeout", "20000");
+		caps.setCapability("adbExecTimeout", 20000);
+		caps.setCapability("appWaitForLaunch",false);
 		URL appServer=null;
 		try {
 			appServer = new URL("http://0.0.0.0:4723/wd/hub");
@@ -102,9 +103,10 @@ public class WebDriverFactory {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("We reached here!");
 		AppiumDriver<MobileElement>  driver = new AndroidDriver<MobileElement>(appServer, caps);
-		driver = EventFiringWebDriverFactory.getEventFiringWebDriver(driver, new EventWatcherMobile());
-		
+		//driver = EventFiringWebDriverFactory.getEventFiringWebDriver(driver, new EventWatcherMobile());
+
 		return driver;
 	}
 }

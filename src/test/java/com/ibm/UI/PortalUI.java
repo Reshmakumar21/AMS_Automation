@@ -6,11 +6,12 @@
  */
 package com.ibm.UI;
 
-import com.ibm.Utilities.SeleniumWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import com.ibm.Utilities.SeleniumWait;
 
 /**
  * The Class ContactTabUI.
@@ -381,4 +382,187 @@ public class PortalUI extends BaseUIPage {
 
     @FindBy(xpath = "lnk_UpdatePhoto")
     public WebElement lnk_UpdatePhoto;
+
+    //*********************************** Reshma K  (29-12-2022)************************************/
+
+    //--------------------      Web elements - Partner Portal -     ---------------------------
+
+    /* After logged in as DCA - select position page
+     * Company name
+     */
+    @FindBy(xpath = "//select[@id=\"T:dclay:oc_6459210221r1KNd41:soc1::content\"]")
+    public WebElement Company_Name;
+
+    /*
+     * Company name - V N Polymer Option
+     */
+    @FindBy(xpath = "//option[@title=\"V N POLYMERS PVT. LTD.\"]")
+    public WebElement Company_Name_option;
+
+    /*
+     * Site name
+     */
+    @FindBy(xpath = "//select[@id=\"T:dclay:oc_6459210221r1KNd41:soc2::content\"]")
+    public WebElement Site_name;
+
+    /*
+     * Site name option
+     */
+    @FindBy(xpath = "//option[@title=\"V N POLYMERS PVT. LTD. - INDORE -\"]")
+    public WebElement Site_name_option;
+
+    /*
+     * Partner type
+     */
+    @FindBy(xpath = "//select[@id=\"T:dclay:oc_6459210221r1KNd41:soc3::content\"]")
+    public WebElement Partner_type;
+
+    /*
+     * Partner type option
+     */
+    @FindBy(xpath = "//option[@title=\"V N POLYMERS PVT. LTD. - DCA\"]")
+    public WebElement Partner_type_option;
+
+    /*
+     * Submit (Select position)
+     */
+    @FindBy(xpath = "//div[@id=\"T:dclay:oc_6459210221r1KNd41:b1\"]")
+    public WebElement Submit_position;
+
+    /* Select customer page
+     * Search customer
+     */
+    @FindBy(xpath = "//input[@type=\"search\"]")
+    public WebElement Search_customer;
+
+    /*
+     * Select Vikas (Customer)
+     */
+    @FindBy(xpath = "//input[@id=\"T:dclay:oc_6459210221r1KNd41:i1:30:sbr1::content\"]")
+    public WebElement Select_customer;
+
+    /* Customer - order page
+     * Order
+     */
+    @FindBy(xpath = "//a[@id=\"T:i3:4:i1\"]")
+    public WebElement Order;
+
+    /* Indent tracking page
+     * Create Sales Order
+     */
+    @FindBy(xpath = "//a[@id=\"T:pt_i3:11:pt_l3\"]")
+    public WebElement Create_sales_order;
+
+    /* select contract option page
+     * With Contract option -------------------------------------------------------------------
+     */
+    @FindBy(xpath = "//div[@id=\"T:dclay:oc_2827012977rZUOVQ1:b1\"]")
+    public WebElement with_contract;
+
+    /* commission sales with contract page
+     * fetch contract button
+     */
+    @FindBy(xpath = "//div[@class=\"font-size18 af_button p_AFTextOnly\"]")
+    public WebElement fetch_contract;
+
+    /*
+     * select contract
+     */
+    @FindBy(xpath = "//input[@id=\"T:dclay:oc_2827012977rZUOVQ1:i1:0:sbr1::content\"]")
+    public WebElement select_contract;
+
+    /*
+     * Quantity
+     */
+    @FindBy(xpath = "//input[@id=\"T:dclay:oc_2827012977rZUOVQ1:i8:0:it2::content\" or contains(@id,'T:dclay:oc_2827012977rZUOVQ1:i4:0:it1::content')]")
+    public WebElement Quantity;
+
+    /*
+     * Fetch price
+     */
+    @FindBy(xpath = "//div[@id=\"T:dclay:oc_2827012977rZUOVQ1:b5\" or contains(@id,'T:dclay:oc_2827012977rZUOVQ1:b10')]")
+    public WebElement fetch_price;
+
+    /*
+     * mode of transport
+     */
+    @FindBy(xpath = "//select[@id='T:dclay:oc_2827012977rZUOVQ1:soc4::content']")
+    public WebElement mode_of_transport;
+
+    /*
+     * mode of transport - road option
+     */
+    @FindBy(xpath = "//option[@title=\"Road\"]")
+    public WebElement mode_of_transport_road;
+
+    /*
+     * Continue
+     */
+    @FindBy(xpath = "//div[@id=\"T:dclay:oc_2827012977rZUOVQ1:b2\" or contains(@id,'T:dclay:oc_9990357074rpk77c1:b2')]")
+    public WebElement Continue_sales;
+
+    /* place order page
+     * Confirm order
+     */
+    @FindBy(xpath = "(//div[@class=\"af_button p_AFTextOnly\"])[2]")
+    public WebElement Confirm_order;
+
+    /* order popup
+     * OK button -------------------------------------------------------------------------------
+     */
+    @FindBy(xpath = "//div[@id=\"T:dclay:oc_2827012977rZUOVQ1:b1\" ]")
+    public WebElement Ok_button;
+    //or contains(@id, 'T:dclay:oc_2827012977rZUOVQ1:b3')
+
+    /*
+     * PR number
+     * */
+    @FindBy(xpath = "//span[@class=\"IOCLtext_2\"]")
+    public WebElement PR_number;
+
+    /* Contract Selection page -------------------------------------------------------------------
+     * Without Contract
+     */
+    @FindBy (xpath = "//div[@id=\"T:dclay:oc_2827012977rZUOVQ1:b3\"]")
+    public WebElement without_contract;
+
+    /* Commission sales Without Contract
+     * Continue
+     */
+    @FindBy (xpath = "//div[@id=\"T:dclay:oc_2827012977rZUOVQ1:b2\"]")
+    public WebElement continue_shipping;
+
+    /* Supply information
+     * Plant type select
+     */
+    @FindBy	(xpath = "//select[@id=\"T:dclay:oc_2827012977rZUOVQ1:soc3::content\"]")
+    public WebElement plant_type;
+
+    @FindBy (xpath = "//option[@title=\"SAP Plant\"]")
+    public WebElement plant_type_SAP;
+
+    @FindBy (xpath = "//input[@name='T:dclay:oc_2827012977rZUOVQ1:it6']")
+    public WebElement supply_location;
+
+    @FindBy (xpath = "//li[@id=\"T:dclay:oc_2827012977rZUOVQ1:it6::su0\"]")
+    public WebElement supply_loc_IOC;
+
+    @FindBy (xpath = "//input[@id=\"T:dclay:oc_2827012977rZUOVQ1:sor1:_0\"]")
+    public WebElement delivery_mode;
+
+    @FindBy (xpath = "//select[@id=\"T:dclay:oc_2827012977rZUOVQ1:soc4::content\"]")
+    public WebElement payment_term;
+
+    @FindBy (xpath = "//option[@title=\"Within 02 days due net\"]")
+    public WebElement payment_term_option;
+
+    @FindBy (xpath = "//select[@id=\"T:dclay:oc_2827012977rZUOVQ1:soc1::content\"]")
+    public WebElement mode_of_trnsport;
+
+    @FindBy (xpath = "//input[@id=\"T:dclay:oc_2827012977rZUOVQ1:i4:0:it6::content\"]")
+    public WebElement material;
+
+    @FindBy (xpath = "//li[@id=\"T:dclay:oc_2827012977rZUOVQ1:i4:0:it6::su4\"]")
+    public WebElement product_0033;
+
 }

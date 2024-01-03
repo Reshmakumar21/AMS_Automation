@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.UI;
 
@@ -19,7 +19,7 @@ public class SVAgainstTVUI extends BaseUIPage {
 
 	/** The driver. */
 	WebDriver driver;
-	
+
 	/** The exp wait. */
 	SeleniumWait expWait;
 
@@ -36,13 +36,13 @@ public class SVAgainstTVUI extends BaseUIPage {
 
 	@FindBy(xpath = "//*[@title='Pick Contact List Applet']//td[contains(@id,'First_Name')]")
 	public WebElement txt_PickAppletFirstName;
-	
+
 	@FindBy(xpath = "//*[@title='Pick Contact List Applet']//*[text()='OK']")
-	public WebElement btn_PickAppletOK;	
-	
+	public WebElement btn_PickAppletOK;
+
 	@FindBy(xpath = "//*[@title='Pick Contact List Applet']//button[@title='Pick Contact:Go']")
-	public WebElement btn_PickAppletGO;	
-	
-	
-	
+	public WebElement btn_PickAppletGO;
+
+
+
 }

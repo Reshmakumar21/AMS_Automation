@@ -160,7 +160,7 @@ public class ProfileServiceRequestUI extends BaseUIPage {
 	/** The txt attachments identity number. */
 	@FindBy(xpath = "//*[@title='Attachments List Applet']//input[contains(@aria-labelledby,'EPIC_Identity_Num')]")
 	public WebElement txt_AttachmentsIdentityNumber;
-	
+
 	/** The btn File upload. */
 	@FindBy(xpath = "//*[@title='Attachments List Applet']//button[contains(@aria-label, 'FileUpload')]")
 	public WebElement btn_FileUpload;

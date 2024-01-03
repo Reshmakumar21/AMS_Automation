@@ -33,7 +33,7 @@ public class SR_CustomerNameChange extends SuperTest {
 
 		/**
 		 * TC 00 set up.
-		 * 
+		 *
 		 * @throws Exception
 		 */
 		@BeforeClass
@@ -64,14 +64,14 @@ public class SR_CustomerNameChange extends SuperTest {
 	 */
 	@Test
 	public void TC02_SearchForRelationShip() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 	}
 
 	@Test
 	public void TC03_LastNameDrillDown() {
-		
+
 		test.contactPage.afterRelationShipSearchClickOnLastName();
 	}
 
@@ -84,62 +84,62 @@ public class SR_CustomerNameChange extends SuperTest {
 	/* TC to clean existing SR statuses */
 	@Test @Ignore
 	public void TC05_cleanExistingSRStatuses() {
-		
+
 		test.profileSRPage.connectDBToUpdateAllSRStatusToClose(relNumber);
 	}
 
 	@Test
 	public void TC06_NavigateToProfileSR_Tab() {
-		
+
 		test.contactPage.navigateToProfileSRContactPage();
 	}
 
 	@Test
 	public void TC07_selectTransactionType() {
-		
+
 		test.profileSRPage.selectTransactionType("Customer Name Correction");
 	}
 
 	@Test
 	public void TC08_DrillDownSRNumber() {
-		
+
 		test.profileSRPage.drillDownSRNumber();
 	}
 
 	@Test
 	public void TC09_NameChange() {
-		
+
 		test.profileSRPage.NameChange();
 	}
 
 	@Test
 	public void TC10_AddAttachment() {
-		
+
 		test.profileSRPage.addAttachment();
 	}
 
 	@Test
 	@Ignore
 	public void TC11_ClickSubmit() {
-		
+
 		test.profileSRPage.submitSR();
 	}
 
 	@Test
 	public void TC12_VerifyProfileSRStatus() {
-		
+
 		test.profileSRPage.verifySRStatus("Closed");
 	}
 
 	@Test
 	public void TC13_VerifyAmendment() {
-		
+
 		test.profileSRPage.verifyAmendment();
 	}
 
 	@Test
 	public void TC14_VerifyMDM() {
-		
+
 		test.profileSRPage.verifyMDM("name");
 	}
 

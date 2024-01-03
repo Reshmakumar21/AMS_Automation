@@ -15,7 +15,6 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -59,7 +58,7 @@ public class SuperTest extends LoggerWriter {
 	/**
 	 * Before due set up.
 	 */
-	@BeforeSuite
+	@BeforeSuite(alwaysRun=true)
 	public void beforeSuperMaterSetUp(ITestContext ctx) {
 		System.out.println();
 		System.out.println("***********Before SetUp ********");
@@ -98,7 +97,7 @@ public class SuperTest extends LoggerWriter {
 	/**
 	 * After clean up.
 	 */
-	@AfterSuite
+	@AfterSuite(alwaysRun=true)
 	public void afterSuperMasterCleanUp(ITestContext ctx) {
 		System.out.println("*********** Flush ********");
 		extent.flush();
@@ -129,7 +128,7 @@ public class SuperTest extends LoggerWriter {
 	 *
 	 * @param testMethod the test method
 	 */
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void beforeTestMethod(Method testMethod) {
 		System.out.println(
 				"\n-----------------------------------------------------------------------------------------------------------------------");
@@ -145,7 +144,7 @@ public class SuperTest extends LoggerWriter {
 	 * @return the result
 	 * @throws Exception the exception
 	 */
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void getResult(ITestResult result) throws Exception {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			logger.log(Status.FAIL,
@@ -174,7 +173,7 @@ public class SuperTest extends LoggerWriter {
 				"\n-----------------------------------------------------------------------------------------------------------------------\n\n");
 	}
 
-	@BeforeTest
+	@BeforeTest(alwaysRun=true)
 	public void beforeMasterSetUp() {
 		System.out.println();
 		System.out.println("***********Before Test ********");
@@ -184,7 +183,7 @@ public class SuperTest extends LoggerWriter {
 		LoggerWriter._initSetLogger(logger);
 	}
 
-	@AfterTest
+	@AfterTest(alwaysRun=true)
 	public void afterMasterSetUp() {
 //		System.out.println("*********** Flush ********");
 //		extent.flush();
@@ -200,14 +199,14 @@ public class SuperTest extends LoggerWriter {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		String screenshotName = null;
+		String screenshotName = "SC";
 		String destination = LoggerWriter.screenShotPath + "/" + screenshotName + dateName + ".jpg";
 		File finalDestination = new File(destination);
 		FileUtils.copyFile(source, finalDestination);
 		return destination;
 	}
 	public String readToastmessage() throws TesseractException, IOException{
-	    
+
 		String Image= getScreenShot();
 		String result= null;
 		File imageFile= new File( scrShorDirPath ,Image);
@@ -217,8 +216,8 @@ public class SuperTest extends LoggerWriter {
 		instance.setDatapath(tessDataFolder.getAbsolutePath());
 		result= instance.doOCR(imageFile);
 		System.out.println(result);
-		
+
 		return result;
-		
+
 	}
 }

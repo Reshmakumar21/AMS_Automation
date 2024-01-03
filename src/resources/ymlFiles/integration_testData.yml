@@ -46,8 +46,10 @@ SIT:
   DB:
     Siebel:
       url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.59.7.91)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=tsblpdb.ds.indianoil.in)))
-      UserName: AKOHLI
-      Password: Welcome1
+      UserName: irasfmwusr
+      Password: Welcome01
+      UserName2: AKOHLI
+      Password2: Welcome1
     FMW:
       url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.59.7.86)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=TMWPDB.ds.indianoil.in)))
       UserName: DCT_SOAUTIL
@@ -79,8 +81,8 @@ SIT:
   Portal:
     Customer:
       URL: http://10.59.16.154:7777/webcenter/portal/Customer/pages_landingpage
-      UserName: "1999999111"
-      Password: "Welcome@01"
+      UserName: "3482012031"
+      Password: "Hello@123"
     Partner:
       UserName: ""
       Password: "Hello@123"
@@ -111,10 +113,14 @@ UAT:
       Password: Welcome123
 
   FO:
-    URL: https://10.59.17.67/htim_enu/start.swe?
-    UserName: "IBMCons87"
-    Password: "Iocl@Mar2021"
-
+    URL: https://10.59.17.35/htim_idam/start.swe?
+    UserName: "00082279"
+    Password: "Welcome@123"
+    
+  CO:
+    UserName: "00509974"
+    Password: "Welcome@123"
+    
   MDM:
     URL: http://10.59.16.155:8090/ucm_enu/start.swe?
     UserName: "ANMOLR"
@@ -125,8 +131,12 @@ UAT:
       UserName: ""
       Password: ""
     Partner:
+      URL: https://identityuat.ex.indianoil.in/webcenter/portal/Partner/pages_partnerlandingpage
       UserName: ""
       Password: ""
+    DCA:
+      UserName: "0000323365_01"
+      Password: "Welcome@123"
   Employee:
     UserName: ""
     Password: ""
@@ -166,8 +176,8 @@ User:
 
 NewCustomer:
   Salutation: Miss
-  FirstName: Test
-  LastName: Test
+  FirstName: first
+  LastName: last
   Gender: Female
   DOB: 26-May-1990
   BPL: Y
@@ -180,6 +190,7 @@ NewCustomer:
     Area: Old Bus Stand
     PinCode: 243005
     # PinCode: 160030
+    LocalBody: Nakur
     City: BAREILLY
     Urban: Urban
 
@@ -189,15 +200,27 @@ NewCustomer:
     IdentityNumber: DLD2DXXX
 
   RelationShipScheme:
+    # 14.2 Kg Cylinder
     Scheme: General Scheme
-    SchemeType: Across Counter
+    SchemeType: General
     PromotionName: "14.2 Kg General Package with PR"
-    ServiceArea: BEHARIPUR
+    
+    # 5 Kg Composite
+    #Scheme: General Scheme
+    #SchemeType: General
+    #PromotionName: "5 Kg COMPOSITE - General Package with PR"
+    
+    # 10 Kg Composite
+    #Scheme: General Scheme
+    #SchemeType: General
+    #PromotionName: "10 Kg COMPOSITE - General Package with PR"
+    
+    ServiceArea: HARTMANN
 
 
   Document:
     Type: SV
-    SubType: New connection
+    SubType: New Connection
 
 
 

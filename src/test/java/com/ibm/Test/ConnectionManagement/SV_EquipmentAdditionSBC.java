@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.Test.ConnectionManagement;
 
@@ -37,13 +37,13 @@ public class SV_EquipmentAdditionSBC extends SuperTest {
 	public void TC00_SetUp() throws Exception {
 		Utilities.setYamlFilePath("integration_testData.yml");
 		test = new TestSessionInitiator();
-		
+
 			relNumber = System.getProperty("relationShipNumber",
 					Utilities.getRelationShipFromTxtFile(test.getYamlVal("Txt.RelationShip")));
 			System.out.println("Relation Ship Used : " + relNumber);
 			if (relNumber.length() < 2) {
 				throw new Exception("RelationShip Number is not : " + relNumber);
-			
+
 		}
 	}
 	/**
@@ -61,7 +61,7 @@ public class SV_EquipmentAdditionSBC extends SuperTest {
 	 */
 	@Test
 	public void TC02_SearchForRelationShip() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 	}

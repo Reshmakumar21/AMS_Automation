@@ -6,12 +6,12 @@
 
 package com.ibm.automation;
 
-import com.ibm.Utilities.Utilities;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import com.ibm.Utilities.Utilities;
 
 /**
  * DB connection class.
@@ -53,6 +53,9 @@ public class DBConnection {
         String strUserID = (Utilities.getYamlValue("" + Utilities.getYamlValue("environment") + ".DB.Siebel.UserName"));
         String strPassword = (Utilities.getYamlValue("" + Utilities.getYamlValue("environment") + ".DB.Siebel.Password"));
 
+        System.out.println("********" + dbURL + "************");
+        System.out.println("********" + strUserID + "************");
+        System.out.println("********" + strPassword + "************");
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             java.sql.Connection myConnection = DriverManager.getConnection(dbURL, strUserID, strPassword);

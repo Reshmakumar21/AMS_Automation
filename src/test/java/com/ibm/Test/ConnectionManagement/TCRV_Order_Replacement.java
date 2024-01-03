@@ -29,13 +29,13 @@ public class TCRV_Order_Replacement extends SuperTest {
 	public void TC00_SetUp() throws Exception {
 		Utilities.setYamlFilePath("integration_testData.yml");
 		test = new TestSessionInitiator();
-		
+
 			relNumber = System.getProperty("relationShipNumber",
 					Utilities.getRelationShipFromTxtFile(test.getYamlVal("Txt.RelationShip")));
 			System.out.println("Relation Ship Used : " + relNumber);
 			if (relNumber.length() < 2) {
 				throw new Exception("RelationShip Number is not : " + relNumber);
-			
+
 		}
 	}
 
@@ -55,7 +55,7 @@ public class TCRV_Order_Replacement extends SuperTest {
 	 */
 	@Test
 	public void TC02_SearchForRelationShip() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 	}
@@ -103,7 +103,7 @@ public class TCRV_Order_Replacement extends SuperTest {
 	public void TC12_invoiceComplete() {
 		test.ttvConMngPage.invoiceComplete();
 	}
-	
+
 	/**
 	 * Tear down session.
 	 */

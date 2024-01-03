@@ -34,10 +34,10 @@ public class NFROrder extends SuperTest {
 
 	/**
 	 * TC 00 set up.
-	 * 
+	 *
 	 * @throws Exception
 	 */
-	@BeforeClass
+	@BeforeClass(alwaysRun=true)
 	public void TC00_SetUp() throws Exception {
 		Utilities.setYamlFilePath("integration_testData.yml");
 		test = new TestSessionInitiator();
@@ -52,7 +52,7 @@ public class NFROrder extends SuperTest {
 	/**
 	 * TC 01 enter login info.
 	 */
-	@Test
+	@Test(priority = 1)
 	public void TC01_EnterLoginInfo() {
 		test.launchApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".URL"));
 		test.login.LoginToApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".UserName"),
@@ -63,50 +63,50 @@ public class NFROrder extends SuperTest {
     /**
      * TC search for relation ship.
      */
-    @Test
+    @Test(priority = 2)
     public void TC02_SearchForRelationShip() {
         test.homePage.launchRelationShipTab();
         test.homePage.searchForRelationShipNumber(relNumber);
     }
 
     /*TC drill down relationShip*/
-    @Test
+    @Test(priority = 3)
     public void TC03_RelationShipDrillDown() {
         test.homePage.openRelationShipFromSearchResult();
     }
 
     /* TC to clean existing Secondary Sales statuses */
-    @Test
+    @Test(priority = 4)
     public void TC04_cleanExistingSecondarySalesStatuses() {
-        
+
         test.contactPage.connectDBToUpdateAllSecondarySalesStatusToClose(relNumber);
     }
 
     /*TC navigate to secondary sales order*/
-    @Test
+    @Test(priority = 5)
     public void TC05_NavigateToSecondarySalesOrders() {
-        
+
         test.contactPage.navigateToSecondarySalesOrders();
     }
 
     /*TC select order sub type and drill down sales order*/
-    @Test
+    @Test(priority = 6)
     public void TC06_SelectOrderSubType(){
-        
+
         test.contactPage.selectOrderSubType("NFR Sales");
     }
 
     /*TC add products for secondary sales order*/
-    @Test
+    @Test(priority = 7)
     public void TC07_AddProducts(){
-        
+
         test.contactPage.addProductsNFRSales();
     }
 
     /*TC verify payment tab*/
-    @Test
+    @Test(priority = 8)
     public void TC08_VerifyPayments(){
-        
+
         test.contactPage.verifySecondarySalesOrderPayment();
     }
 
@@ -114,10 +114,10 @@ public class NFROrder extends SuperTest {
     /**
      * Tear down session.
      */
-    @AfterClass
+    @AfterClass(alwaysRun=true)
     public  void tearDownSession() {
             test.closeBrowserSession();
-        
+
     }
 
 }

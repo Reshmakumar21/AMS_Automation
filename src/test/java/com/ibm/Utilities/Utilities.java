@@ -50,7 +50,7 @@ public class Utilities {
 	 * @param yamlToken the yaml token
 	 * @return the yaml value
 	 */
-	@SuppressWarnings({ "unchecked" })
+	@SuppressWarnings({ "rawtypes" })
 	public static String getYamlValue(String yamlToken) {
 		Reader reader = null;
 		int tokenCount = 0, i = 0;
@@ -249,15 +249,16 @@ public class Utilities {
 		}
 		return null;
 	}
-	
+
+	@SuppressWarnings("unused")
 	public static void LaunchEmulator() {
 		try {
-			Process p=Runtime.getRuntime().exec("emulator -avd IOCL -gpu host");
+			Process p=Runtime.getRuntime().exec("emulator -avd emulatortest1 -gpu host");
 				Thread.sleep(5000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 }

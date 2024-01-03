@@ -1,9 +1,9 @@
 package com.ibm.automation;
 
-import org.testng.TestNG;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.testng.TestNG;
 
 public class Iterations {
 
@@ -13,7 +13,7 @@ public class Iterations {
         String testngXmlName = "CustomerOnBoardingSBC";
 
         for (int i = 0; i < numberOfIterationsRequired; i++) {
-            List<String> suites = new ArrayList<String>();
+            List<String> suites = new ArrayList<>();
             suites.add("./src/resources/suiteFileXML/" + testngXmlName + ".xml"); //path of .xml file
             TestNG tng = new TestNG();
             tng.setTestSuites(suites);

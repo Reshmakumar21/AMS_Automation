@@ -1,11 +1,12 @@
 package com.ibm.Test.Retail.PAM.DealerScenarios;
 
-import com.ibm.Utilities.Utilities;
-import com.ibm.automation.SuperTest;
-import com.ibm.automation.TestSessionInitiator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.ibm.Utilities.Utilities;
+import com.ibm.automation.SuperTest;
+import com.ibm.automation.TestSessionInitiator;
 
 /**
  * The Retail PAM_CCTV_FO_Approve test class.

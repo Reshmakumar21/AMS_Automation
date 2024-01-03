@@ -1,7 +1,5 @@
 package com.ibm.Mobile.Actions;
 
-import java.util.Random;
-
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -9,8 +7,6 @@ import com.ibm.Mobile.UI.MobileUI;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import junit.framework.Assert;
-import net.sourceforge.tess4j.TesseractException;
 
 public class MobileAction {
 
@@ -21,7 +17,7 @@ public class MobileAction {
 	public static ExtentTest logger;
 
 	protected MobileUI mobileUI;
-	
+
 	protected MobileServiceRequestActions mobilesractions;
 
 	public MobileAction(AppiumDriver<MobileElement> mobileDriver2) {
@@ -31,7 +27,7 @@ public class MobileAction {
 		mobilesractions = new MobileServiceRequestActions(mobileDriver2);
 
 	}
-	 
+
 
 	public void loginToInformation() {
 		mobileUI.btn_NewConnection().click();
@@ -41,11 +37,9 @@ public class MobileAction {
 		mobileUI.btn_LoginNow().click();
 		mobileUI.txt_PhoneNumber().isDisplayed();
 		System.out.println(mobileUI.txt_PhoneNumber().getText());
-		
-
 	}
 
-	
+
 	public void orderCylinder() {
 		mobileUI.btn_OrderCylinder().click();
 		mobileUI.btn_OrderNow().click();
@@ -68,20 +62,20 @@ public class MobileAction {
 		System.out.println(mobileUI.TransactionId().getText());
 		mobileUI.GoToHomePageButton().click();
 	}
-	
+
 	public void openMenu()
 	{
 		mobileUI.lnk_toolBarMenu().click();
-		
-		
+
+
 	}
-	
+
 	public void openBookingHistory(){
 		mobileUI.lnk_LPGMenuBar().click();
 		mobileUI.lnk_LPGHistory().click();
 		mobileUI.lnk_LPGBookingHistory().click();
 	}
-	
+
 	public void cancelOrder() {
 		mobileUI.btn_CancelOrder().click();
 		mobileUI.radio_CancelReason().click();
@@ -101,8 +95,8 @@ public class MobileAction {
 		System.out.println(SRNumber +"Submitted successfully");
 		mobileUI.GoToHomePageButton().click();
 	}
-	
-	
-	
-	
+
+
+
+
 }

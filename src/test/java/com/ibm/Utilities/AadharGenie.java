@@ -160,7 +160,7 @@ public class AadharGenie {
         for (int i = 0; i <= 5; i++) {
 
             stringAadhar = Long.toString(randomNumber());
-			
+
 			if(stringAadhar.startsWith("1")){
                 continue;
             }
@@ -169,7 +169,7 @@ public class AadharGenie {
             genAadharNum = stringAadhar + generateVerhoeff(stringAadhar);
 
             //Aadhar number validation
-            if (validateVerhoeff(genAadharNum) == false) {
+            if (!validateVerhoeff(genAadharNum)) {
                 notePad(genAadharNum);
             }
             //Aadhar length validation

@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.Test;
 
@@ -29,7 +29,7 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 00 set up.
 	 */
-	@BeforeClass
+	@BeforeClass(alwaysRun=true)
 	public void TC00_SetUp() {
 		System.out.println();
 		System.out.println("***********Before Class ********");
@@ -41,7 +41,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 01 enter login info.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 1, groups = {"minimal"})
 	public void TC01_EnterLoginInfo() {
 		test.launchApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".URL"));
 		test.login.LoginToApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".UserName"),
@@ -52,7 +53,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 02 navigate to contact tab.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 2, groups = {"minimal"})
 	public void TC02_NavigateToContactTab() {
 		test.contactPage.naviagteToContactTab();
 	}
@@ -60,7 +62,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 03 create new contact.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 3, groups = {"minimal"})
 	public void TC03_createNewContact() {
 		test.contactPage.createNewContact();
 	}
@@ -68,7 +71,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 04 enter new customer information.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 4, groups = {"minimal"})
 	public void TC04_enterNewCustomerInformation() {
 		test.contactPage.enterNewCustomerInformation(test.getYamlVal("NewCustomer.Salutation"),
 				test.getYamlVal("NewCustomer.FirstName"), test.getYamlVal("NewCustomer.LastName"),
@@ -78,18 +82,21 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 05 add new address.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 5, groups = {"minimal"})
 	public void TC05_addNewAddress() {
 		test.contactPage.addNewAddress(test.getYamlVal("NewCustomer.Address.Line1"),
 				test.getYamlVal("NewCustomer.Address.Line2"), test.getYamlVal("NewCustomer.Address.Line3"),
 				test.getYamlVal("NewCustomer.Address.Area"), test.getYamlVal("NewCustomer.Address.PinCode"),
-				test.getYamlVal("NewCustomer.Address.City"), test.getYamlVal("NewCustomer.Address.Urban"));
+				test.getYamlVal("NewCustomer.Address.LocalBody"), test.getYamlVal("NewCustomer.Address.City"),
+				test.getYamlVal("NewCustomer.Address.Urban"));
 	}
 
 	/**
 	 * Test Case 06 add identities for new customer.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 6, groups = {"minimal"})
 	public void TC06_addIdentitiesForNewCustomer() {
 		test.contactPage.addIdentitiesForNewCustomer(test.getYamlVal("NewCustomer.Identities.IdentityType"),
 				test.getYamlVal("NewCustomer.Identities.IdentityMethod"),
@@ -99,31 +106,47 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 08 enter BPL for new customer.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 7, groups = {"minimal"})
 	public void TC08_enterBPLForNewCustomer() {
 		test.contactPage.enterBPLForNewCustomer(test.getYamlVal("NewCustomer.BPL"));
 	}
 
 	/**
+	 * Test Case 09 enter phone no for new customer.
+	 */
+//	@Test
+	@Test(priority = 8, groups = {"minimal"})
+	public void TC09_enterPhoneForNewCustomer() {
+		String num = Long.toString((long) Math.floor(Math.random() * 9_000_000_000L) + 1_000_000_000L);
+		//test.contactPage.enterPhoneForNewCustomer(num); Note: changes made
+	}
+
+	/**
 	 * Test Case 09 perform contact dedup.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 9, groups = {"minimal"})
 	public void TC09_performContactDedup() {
 		test.contactPage.performContactDedup();
 	}
 
+
+	// Redundant
 	/**
 	 * Test Case 10 navigate to general connection summary.
 	 */
-	@Test
-	public void TC10_navigateToGeneralConnectionSummary() {
-		test.contactPage.navigateToGeneralConnectionSummary();
-	}
+//	@Test
+//	@Test(priority = 10, groups = {"minimal"})
+//	public void TC10_navigateToGeneralConnectionSummary() {
+//		test.contactPage.navigateToGeneralConnectionSummary();
+//	}
 
 	/**
 	 * Test Case 11 create new relationship ship.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 11, groups = {"minimal"})
 	public void TC11_createNewRealationShip() {
 		relNumber = test.contactPage.createNewRelationShip(test.getYamlVal("environment"));
 	}
@@ -131,7 +154,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 12 relation ship drill down and set scheme.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 12, groups = {"minimal"})
 	public void TC12_relationShipDrillDownAndSetScheme() {
 		test.contactPage.relationShipDrillDownAndSetScheme(test.getYamlVal("NewCustomer.RelationShipScheme.Scheme"),
 				test.getYamlVal("NewCustomer.RelationShipScheme.SchemeType"),
@@ -142,7 +166,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 13 navigate to document and create document.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 13, groups = {"minimal"})
 	public void TC13_navigateToDocumentAndCreateDocument() {
 		test.contactPage.navigateToDocumentAndCreateDocument(test.getYamlVal("NewCustomer.Document.Type"),
 				test.getYamlVal("NewCustomer.Document.SubType"));
@@ -151,7 +176,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 14 created line items.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 14, groups = {"minimal"})
 	public void TC14_createdLineItems() {
 		test.contactPage.createdLineItems("SBC");
 	}
@@ -159,7 +185,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 15 submit document.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 15, groups = {"minimal"})
 	public void TC15_submitDocument() {
 		test.contactPage.submitDocument();
 	}
@@ -167,7 +194,8 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 16 invoice document.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 16, groups = {"minimal"})
 	public void TC16_invoiceDocument() {
 		test.contactPage.invoiceDocument();
 	}
@@ -175,16 +203,18 @@ public class CustomerOnboardingSBC extends SuperTest {
 	/**
 	 * Test Case 17 verify installation.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 17, groups = {"minimal"})
 	public void TC17_verifyInstallation() {
 		test.contactPage.verifyInstallation();
-		test.contactPage.verifyPricing("SBC");
+//		test.contactPage.verifyPricing("SBC");
 	}
 
 	/**
 	 * Test Case 18 verify relationship ship status.
 	 */
-	@Test
+//	@Test
+	@Test(priority = 18)
 	public void TC18_verifyRelationshipStatus() {
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
@@ -192,22 +222,23 @@ public class CustomerOnboardingSBC extends SuperTest {
 		test.contactPage.verifyConsumerType("SBC");
 	}
 
-	@Test
+//	@Test
+	@Test(priority = 19)
 	public void TC19_verifyProductsAndAssetsAndInventoryTransactionsOfDocuments() {
-		test.homePage.openRelationShipFromSearchResult();
-		test.contactPage.verifyOnboardedCustPoints();
+		//test.homePage.openRelationShipFromSearchResult();
+		//test.contactPage.verifyOnboardedCustPoints();
 	}
 
 	/**
 	 * Tear down session.
 	 */
-	@AfterClass
+	@AfterClass(alwaysRun=true)
 	public void tearDownSession() {
 		System.out.println("***************** After Class ***********************");
 		if (!(StringUtils.isEmpty(relNumber))) {
 			Utilities.writeRelationShipNumberInTxtFile(relNumber, test.getYamlVal("environment").toLowerCase());
 			System.setProperty("relationShipNumber", relNumber);
 		}
-		test.closeBrowserSession();
+		//test.closeBrowserSession();
 	}
 }

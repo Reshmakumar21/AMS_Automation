@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.Test.SR;
 
@@ -29,7 +29,7 @@ public class SR_BankSeeding_FO_Reject_3 extends SuperTest {
 
 	/**
 	 * TC 00 set up.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	@BeforeClass
@@ -59,52 +59,52 @@ public class SR_BankSeeding_FO_Reject_3 extends SuperTest {
 	 */
 	@Test
 	public void TC02_SearchForRelationShip() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 	}
 
 	@Test
 	public void TC03_LastNameDrillDown() {
-		
+
 		test.contactPage.afterRelationShipSearchClickOnLastName();
 	}
 
 	/* TC to store MDMuID value */
 	@Test
 	public void TC04_NavigateToMoreInfoTabToObtainMDM_UID() {
-		
+
 		test.profileSRPage.getMDMUID();
 	}
 
 	/* TC to clean existing SR statuses */
 	@Test @Ignore
 	public void TC05_cleanExistingSRStatuses() {
-		
+
 		test.profileSRPage.connectDBToUpdateAllSRStatusToClose(relNumber);
 	}
 
 	@Test
 	public void TC06_NavigateToProfileSR_Tab() {
-		
+
 		test.contactPage.navigateToProfileSRContactPage();
 	}
 
 	@Test
 	public void TC07_selectTransactionType() {
-		
+
 		test.profileSRPage.selectTransactionType("Bank Seeding");
 	}
 
 	@Test
 	public void TC08_DrillDownSRNumber() {
-		
+
 		test.profileSRPage.drillDownSRNumber();
 	}
 
 	@Test
 	public void TC09_BankSeedingDetails() {
-		
+
 		test.profileSRPage.AddBankDetailsProfileSR("APBL0000108");
 		test.profileSRPage.addAttachmentForProfileSR("Aadhaar(UID)");
 	}
@@ -124,13 +124,13 @@ public class SR_BankSeeding_FO_Reject_3 extends SuperTest {
 	/* FO Approval */
 	@Test
 	public void TC12_ApprovalFO() {
-		
+
 		test.profileSRPage.FODecision("Reject");
 	}
 
 	@Test
 	public void TC13_VerifyProfileSRStatus() {
-		
+
 		test.profileSRPage.verifySRStatus("Rejected");
 	}
 

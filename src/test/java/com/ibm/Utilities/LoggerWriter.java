@@ -24,7 +24,7 @@ public class LoggerWriter {
 	/** The screen shot path. */
 	public static String screenShotPath;
 	/** Screen shot file */
-	protected static File scrShorDirPath = new java.io.File("./"+ screenShotPath+ "//");
+	protected static File scrShorDirPath = new java.io.File("./"+ screenShotPath+ "/");
 	/** The driver. */
 	public static WebDriver driver;
 

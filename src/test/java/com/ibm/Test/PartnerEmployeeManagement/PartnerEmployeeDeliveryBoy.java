@@ -1,12 +1,13 @@
 package com.ibm.Test.PartnerEmployeeManagement;
 
-import com.ibm.Utilities.Utilities;
-import com.ibm.automation.SuperTest;
-import com.ibm.automation.TestSessionInitiator;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.ibm.Utilities.Utilities;
+import com.ibm.automation.SuperTest;
+import com.ibm.automation.TestSessionInitiator;
 
 /**
  * The Class Customer Portal.
@@ -26,7 +27,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * Test Case 00 set up.
      */
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void TC00_SetUp() {
         System.out.println();
         System.out.println("***********Before Class ********");
@@ -38,7 +39,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * Test Case 01 enter login info.
      */
-    @Test
+    @Test(priority = 1)
     public void TC01_EnterLoginInfo() {
         test.launchApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".URL"));
         test.login.LoginToApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".Employee.UserName"),
@@ -58,7 +59,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * TC navigate to Partner Sites.
      */
-    @Test
+    @Test(priority = 2)
     public void TC03_NavigateToPartnerSitesTab() {
 
         test.partnerEmpPage.navigateToPartnerSitesTab();
@@ -67,7 +68,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * TC drill down site name.
      */
-    @Test
+    @Test(priority = 3)
     public void TC04_DrillDownSiteName() {
 
         test.partnerEmpPage.drillDownSiteName("GOEL ENTERPRISES BLY");
@@ -76,7 +77,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * TC click button add new employee.
      */
-    @Test
+    @Test(priority = 4)
     public void TC05_ClickAddNewEmployeeButton() {
 
         test.partnerEmpPage.clickPlusButtonAddEmployee();
@@ -85,7 +86,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * TC select position of the new employee.
      */
-    @Test
+    @Test(priority = 5)
     public void TC06_AddPositionEmployee() {
 
         test.partnerEmpPage.employeePosition("Non-Siebel Access Position");
@@ -94,7 +95,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /*
      * TC select designation of employee.
      * */
-    @Test
+    @Test(priority = 6)
     public void TC07_AddDesignationEmployee() {
 
         test.partnerEmpPage.employeeDesignation("Delivery Man");
@@ -103,7 +104,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * TC add details for new employee-delivery boy.
      */
-    @Test
+    @Test(priority = 7)
     public void TC08_AddNewEmployee() {
 
         test.partnerEmpPage.addEmployeeDetails();
@@ -112,7 +113,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /*
      * TC perform save action of keyboard.
      * */
-    @Test
+    @Test(priority = 8)
     public void TC09_PerformSaveAction() {
 
         test.partnerEmpPage.performSave();
@@ -121,7 +122,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /*
      * TC verify User ID of new employee.
      * */
-    @Test
+    @Test(priority = 9)
     public void TC10_VerifyGeneratedUserIdEmployee() {
 
         test.partnerEmpPage.verifyUserID();
@@ -130,7 +131,7 @@ public class PartnerEmployeeDeliveryBoy extends SuperTest {
     /**
      * Tear down session.
      */
-    @AfterClass
+    @AfterClass(alwaysRun=true)
     public void tearDownSession() {
         test.closeBrowserSession();
 

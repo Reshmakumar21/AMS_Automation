@@ -30,7 +30,7 @@ public class YamlReader {
 
 	/**
 	 * Sets the yaml file path.
-	 * 
+	 *
 	 * @param filePath
 	 *            the file path
 	 * @return the string
@@ -43,7 +43,7 @@ public class YamlReader {
 
 	/**
 	 * Gets the yaml value.
-	 * 
+	 *
 	 * @param token
 	 *            the token
 	 * @return the yaml value
@@ -59,7 +59,7 @@ public class YamlReader {
 
 	/**
 	 * Gets the yaml values.
-	 * 
+	 *
 	 * @param token
 	 *            the token
 	 * @return the yaml values
@@ -81,7 +81,7 @@ public class YamlReader {
 
 	/**
 	 * Gets the value.
-	 * 
+	 *
 	 * @param token
 	 *            the token
 	 * @return the value
@@ -97,7 +97,7 @@ public class YamlReader {
 
 	/**
 	 * Gets the map value.
-	 * 
+	 *
 	 * @param object
 	 *            the object
 	 * @param token
@@ -111,7 +111,7 @@ public class YamlReader {
 
 	/**
 	 * Parses the map.
-	 * 
+	 *
 	 * @param object
 	 *            the object
 	 * @param token
@@ -129,7 +129,7 @@ public class YamlReader {
 
 	/**
 	 * Gets the yaml nodes array.
-	 * 
+	 *
 	 * @param yamlToken
 	 *            the yaml token
 	 * @return the yaml nodes array

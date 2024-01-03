@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.Actions;
 
@@ -50,7 +50,7 @@ public class HomePageActions extends BaseAction{
 	 */
 	public void verifyHomePageDisplay() {
 		expWait.waitForDomToLoad();
-		expWait.waitForHomePageSipperToDisapper();		
+		expWait.waitForHomePageSipperToDisapper();
 		Assert.assertTrue(homePage.tab_RelationShips.isDisplayed());
 		Utilities.takeScreenshot("Test");
 	}
@@ -191,7 +191,7 @@ public class HomePageActions extends BaseAction{
 //		simpleAlert.accept();
 		// status completed
 		performSave();
-		
+
 		expWait.waitForDomToLoad();
 		expWait.waitForHomePageSipperToDisapper();
 		System.out.println("Status : " + homePage.txt_SalesOrder_OrderStatus.getAttribute("value")); // Completed
@@ -204,7 +204,8 @@ public class HomePageActions extends BaseAction{
 		Assert.assertTrue( status.equalsIgnoreCase("Completed"),"OrderStatus : " + status);
 		LoggerWriter.logger.log(Status.PASS, "OrderStatus : " + status);
 	}
-	
+
+	@Override
 	public void performSave() {
 		try {
 			Actions keyAction = new Actions(driver);
@@ -290,7 +291,7 @@ public class HomePageActions extends BaseAction{
 		expWait.waitForDomToLoad();
 		expWait.waitForHomePageSipperToDisapper();
 	}
-	
+
 	/**
 	 * Logout from UI.
 	 */
@@ -299,17 +300,17 @@ public class HomePageActions extends BaseAction{
 		expWait.waitForDomToLoad();
 		homePage.btn_LogoutUI.click();
 	}
-	
-	public void openLatestOrder() {		
+
+	public void openLatestOrder() {
 		homePage.lnk_OpenRefillOrder.click();
 	}
-	
+
 	public void verifyOrderCancel() {
 		String status = homePage.txt_SalesOrder_OrderStatus.getAttribute("value");
 		Assert.assertTrue( status.equalsIgnoreCase("Cancelled"),"OrderStatus : " + status);
 		LoggerWriter.logger.log(Status.PASS, "OrderStatus : " + status);
 	}
 	public void verifyPaymentrefund() {
-		
+
 	}
 }

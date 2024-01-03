@@ -33,7 +33,7 @@ public class SR_AadharSeeding_FO_Reject_3 extends SuperTest {
 
 	/**
 	 * TC 00 set up.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	@BeforeClass
@@ -64,7 +64,7 @@ public class SR_AadharSeeding_FO_Reject_3 extends SuperTest {
 	 */
 	@Test
 	public void TC02_SearchForRelationShip() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 	}
@@ -72,7 +72,7 @@ public class SR_AadharSeeding_FO_Reject_3 extends SuperTest {
 	/* TC Drilldown last name */
 	@Test
 	public void TC03_LastNameDrillDown() {
-		
+
 		test.contactPage.afterRelationShipSearchClickOnLastName();
 	}
 
@@ -85,21 +85,21 @@ public class SR_AadharSeeding_FO_Reject_3 extends SuperTest {
 	/* TC select transaction type under Service Request List Applet */
 	@Test
 	public void TC05_SelectTransactionType() {
-		
+
 		test.profileSRPage.selectTransactionType("Aadhar Seeding");
 	}
 
 	/* TC Drill down SR Number under Service Request List Applet */
 	@Test
 	public void TC06_DrillDownSRNumber() {
-		
+
 		test.profileSRPage.drillDownSRNumber();
 	}
 
 	/* TC perform aadhar seeding activity */
 	@Test
 	public void TC07_SeedAadhar() {
-		
+
 		test.profileSRPage.seedAadhar();
 		test.profileSRPage.addAttachmentForProfileSR("Aadhaar(UID)");
 	}
@@ -107,21 +107,21 @@ public class SR_AadharSeeding_FO_Reject_3 extends SuperTest {
 	/* Click submit button */
 	@Test
 	public void TC08_ClickSubmit() {
-		
+
 		test.profileSRPage.submitSRVerifyOMCDedup();
 	}
 
 	/* FO Rejection */
 	@Test
 	public void TC09_ApprovalFO() {
-		
+
 		test.profileSRPage.FODecision("Reject");
 	}
 
 	/* Verify profile SR status */
 	@Test
 	public void TC10_VerifyProfileSRStatus() {
-		
+
 		test.profileSRPage.verifySRStatus("Rejected");
 	}
 

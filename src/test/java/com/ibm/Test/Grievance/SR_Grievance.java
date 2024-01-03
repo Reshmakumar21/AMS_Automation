@@ -1,12 +1,13 @@
 package com.ibm.Test.Grievance;
 
-import com.ibm.Utilities.Utilities;
-import com.ibm.automation.SuperTest;
-import com.ibm.automation.TestSessionInitiator;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.ibm.Utilities.Utilities;
+import com.ibm.automation.SuperTest;
+import com.ibm.automation.TestSessionInitiator;
 
 /**
  * The Class SR_Grievance.
@@ -28,7 +29,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * Test Case 00 set up.
      */
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void TC00_SetUp() throws Exception {
         Utilities.setYamlFilePath("integration_testData.yml");
         test = new TestSessionInitiator();
@@ -43,7 +44,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * Test Case 01 enter login info.
      */
-    @Test
+    @Test(priority = 1)
     public void TC01_EnterLoginInfo() {
         test.launchApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".URL"));
         test.login.LoginToApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".UserName"),
@@ -54,7 +55,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 02 search for Service Request tab.
      */
-    @Test
+    @Test(priority = 2)
     public void TC02_OpenServiceRequestTab() {
 
         test.profileSRPage.launchServiceRequestTab();
@@ -63,7 +64,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 03 add button to raise new grievance service request.
      */
-    @Test
+    @Test(priority = 3)
     public void TC03_ClickAddNewGrievanceButton() {
 
         test.profileSRPage.raiseNewGrievance();
@@ -72,7 +73,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 04 Enter Consumer ID on UI.
      */
-    @Test
+    @Test(priority = 4)
     public void TC04_InputConsumerId() {
 
         test.profileSRPage.inputConsumerId(relNumber);
@@ -81,7 +82,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 05 Enter Consumer ID on UI.
      */
-    @Test
+    @Test(priority = 5)
     public void TC05_InputMobileNumber() {
 
         test.profileSRPage.inputMobileNumber();
@@ -90,7 +91,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 06 Select SR categories.
      */
-    @Test
+    @Test(priority = 6)
     public void TC06_SelectSRCategories() {
 
         test.profileSRPage.inputSRCategories();
@@ -99,7 +100,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 07 Input Grievance Description.
      */
-    @Test
+    @Test(priority = 7)
     public void TC07_InputGrievanceDescription() {
 
         test.profileSRPage.inputGrievanceDescription();
@@ -108,7 +109,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 08 Submit Grievance.
      */
-    @Test
+    @Test(priority = 8)
     public void TC08_SubmitGrievance() {
 
         test.profileSRPage.submitGrievance();
@@ -117,7 +118,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 09 Search Grievance number.
      */
-    @Test
+    @Test(priority = 9)
     public void TC09_SearchGrievanceSRNumber() {
 
         test.profileSRPage.searchGrievanceSRNumber();
@@ -126,7 +127,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 10 Drill Down New SR request.
      */
-    @Test
+    @Test(priority = 10)
     public void TC10_DrillDownNewSRGrievance() {
 
         test.profileSRPage.drillDownSRGrievance();
@@ -135,7 +136,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 11 Verify Status of Grievance service request | Expected - In Progress.
      */
-    @Test
+    @Test(priority = 11)
     public void TC11_VerifyGrievanceStatus() {
 
         test.profileSRPage.grievanceStatus("In Progress");
@@ -144,7 +145,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 12 Input Resolution Remarks by Distributor.
      */
-    @Test
+    @Test(priority = 12)
     public void TC12_InputResolutionRemarks() {
 
         test.profileSRPage.inputResolutionRemarks();
@@ -153,7 +154,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 13 CLick RESOLVE button by Distributor.
      */
-    @Test
+    @Test(priority = 13)
     public void TC13_ClickResolveButton() {
 
         test.profileSRPage.clickResolveButton();
@@ -162,7 +163,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 14 Drill Grievance SR request.
      */
-    @Test
+    @Test(priority = 14)
     public void TC14_DrillDownSRGrievance() {
 
         test.profileSRPage.drillDownSRGrievance();
@@ -171,7 +172,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 15 Verify Status of Grievance service request | Expected - In Progress.
      */
-    @Test
+    @Test(priority = 15)
     public void TC15_VerifyGrievanceStatus2() {
 
         test.profileSRPage.grievanceStatus("In Progress");
@@ -181,7 +182,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 16 Perform FO actions.
      */
-    @Test
+    @Test(priority = 16)
     public void TC16_FODecision() {
 
         test.profileSRPage.FODecisionGrievance();
@@ -191,7 +192,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 17 Perform Validations.
      */
-    @Test
+    @Test(priority = 17)
     public void TC17_ValidationGrievanceStatus() {
 
         test.profileSRPage.grievanceValidation();
@@ -200,7 +201,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * TC 18 Perform Validation Resolved Date.
      */
-    @Test
+    @Test(priority = 18)
     public void TC18_ValidationGrievanceResolvedDate() {
 
         test.profileSRPage.grievanceValidationResolveDate();
@@ -210,7 +211,7 @@ public class SR_Grievance extends SuperTest {
     /**
      * Tear down session.
      */
-    @AfterClass
+    @AfterClass(alwaysRun=true)
     public void tearDownSession() {
         test.closeBrowserSession();
 

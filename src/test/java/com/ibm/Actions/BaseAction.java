@@ -6,9 +6,6 @@
  */
 package com.ibm.Actions;
 
-import com.ibm.Utilities.SeleniumWait;
-import com.ibm.Utilities.Utilities;
-import com.ibm.automation.DBConnection;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -18,9 +15,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import com.ibm.Utilities.SeleniumWait;
+import com.ibm.Utilities.Utilities;
+import com.ibm.automation.DBConnection;
 
 /**
  * The Class BaseAction.
@@ -101,13 +98,13 @@ public class BaseAction extends DBConnection {
 	 */
 	public void performAltEnter() {
 		Actions act = new Actions(driver);
-		Action actions = act.sendKeys(Keys.ALT.ENTER).build();
+		Action actions = act.sendKeys(Keys.ENTER).build();
 		actions.perform();
 	}
 
 	/**
 	 * To navigate back.
-	 * 
+	 *
 	 * @param n number of navigation required to back pages
 	 */
 	public void navigateBackIterations(int n) {
@@ -118,7 +115,7 @@ public class BaseAction extends DBConnection {
 
 	/**
 	 * To verify if alert is present on UI and Accept the alert.
-	 * 
+	 *
 	 * @param timeOutInSeconds timeout in seconds
 	 */
 	public void alertVerificationAndAcceptAlert(int timeOutInSeconds) {

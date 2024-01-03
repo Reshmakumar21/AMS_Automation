@@ -1,9 +1,14 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="CustomerOnBoarding_SBC_">
 
 	<test name="CustomerOnboardingSBC" enabled="true">
+		<groups>
+			<run>
+				<include name="minimal" />
+			</run>
+		</groups>
 		<classes>
 			<class name="com.ibm.Test.CustomerOnboardingSBC" />
 		</classes>

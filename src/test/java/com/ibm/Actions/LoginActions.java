@@ -6,14 +6,14 @@
  */
 package com.ibm.Actions;
 
+import java.util.ArrayList;
+
+import org.openqa.selenium.WebDriver;
+
 import com.aventstack.extentreports.Status;
 import com.ibm.UI.LoginPageUI;
 import com.ibm.Utilities.LoggerWriter;
 import com.ibm.Utilities.Utilities;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-
-import java.util.ArrayList;
 
 /**
  * The Class LoginActions.
@@ -132,9 +132,9 @@ public class LoginActions extends BaseAction {
      */
     private ArrayList loginSimulate(String strUserName) {
         String uRL = "", userID = "", psswrd = "";
-        uRL = (util.getYamlValue(util.getYamlValue("environment") + strUserName + ".URL"));
-        userID = (util.getYamlValue(util.getYamlValue("environment") + strUserName + ".UserName"));
-        psswrd = (util.getYamlValue(util.getYamlValue("environment") + strUserName + ".Password"));
+        uRL = (util.getYamlValue(Utilities.getYamlValue("environment") + strUserName + ".URL"));
+        userID = (util.getYamlValue(Utilities.getYamlValue("environment") + strUserName + ".UserName"));
+        psswrd = (util.getYamlValue(Utilities.getYamlValue("environment") + strUserName + ".Password"));
 
         return tabSwitch(uRL, userID, psswrd);
     }
@@ -146,9 +146,9 @@ public class LoginActions extends BaseAction {
      */
     private ArrayList loginSimulator() {
         String uRL = "", userID = "", psswrd = "";
-        uRL = (util.getYamlValue(util.getYamlValue("environment") + ".URL"));
-        userID = (util.getYamlValue(util.getYamlValue("environment") + ".UserName"));
-        psswrd = (util.getYamlValue(util.getYamlValue("environment") + ".Password"));
+        uRL = (util.getYamlValue(Utilities.getYamlValue("environment") + ".URL"));
+        userID = (util.getYamlValue(Utilities.getYamlValue("environment") + ".UserName"));
+        psswrd = (util.getYamlValue(Utilities.getYamlValue("environment") + ".Password"));
 
         return tabSwitch(uRL, userID, psswrd);
     }
@@ -160,12 +160,12 @@ public class LoginActions extends BaseAction {
      * @param psswrd
      * @return new tab/ tabs
      */
-    private ArrayList tabSwitch(String uRL, String userID, String psswrd){
+    private ArrayList<String> tabSwitch(String uRL, String userID, String psswrd){
         // to open new tab
         executeJs("window.open()");
 
         // to handle multiple tabs and switch between the tabs
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1)); // switches to new tab
 
         //navigate to Siebel URL.
@@ -176,4 +176,9 @@ public class LoginActions extends BaseAction {
         expWait.waitForDomToLoad();
         return tabs;
     }
+
+    public ArrayList<String> multiWindow(String uRL, String userID, String psswrd) {
+		return tabSwitch(uRL, userID, psswrd);
+
+        }
 }

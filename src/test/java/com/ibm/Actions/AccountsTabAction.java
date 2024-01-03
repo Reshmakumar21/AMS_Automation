@@ -1,7 +1,7 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-09-15 
+ * @since   2019-09-15
  * @UpdateDate 2021-02-12
  */
 package com.ibm.Actions;
@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
-import com.ibm.UI.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -21,6 +20,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
+import com.ibm.UI.AccountsTabUI;
+import com.ibm.UI.ContactTabUI;
+import com.ibm.UI.HomePageUI;
+import com.ibm.UI.NFR_UI;
+import com.ibm.UI.ProfileServiceRequestUI;
 import com.ibm.Utilities.LoggerWriter;
 
 /**
@@ -56,7 +60,7 @@ public class AccountsTabAction extends BaseAction {
 	 * Document creation.
 	 */
 	String documentNumber;
-	
+
 	/** The approval status AM. */
 	String approvalStatusAM;
 
@@ -605,6 +609,7 @@ public class AccountsTabAction extends BaseAction {
 	 */
 	public void documentApprovalByAreaManager(String btnApproveReject) {
 		// login to Area Manager.
+		@SuppressWarnings("unchecked")
 		ArrayList<String> tabs = loginAction.loginAM();
 
 		if (profileSRPage.get_nameInboxItem(documentNumber).isDisplayed()) {

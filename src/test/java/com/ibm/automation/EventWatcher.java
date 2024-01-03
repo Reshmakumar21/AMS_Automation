@@ -76,8 +76,8 @@ public class EventWatcher implements WebDriverEventListener {
 	public void beforeClickOn(WebElement element, WebDriver driver) {
 		//System.out.println("About to click on : " + element.getText());
 		//Reporter.log("About to click on : " + element.getText());
-		
-		
+
+
 		if (Utilities.getYamlValue("ScreenShot").contains("true")) {
 			try {
 				if (!(element.getText().toString().isEmpty())) {

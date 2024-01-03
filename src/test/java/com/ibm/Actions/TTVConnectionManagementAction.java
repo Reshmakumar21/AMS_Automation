@@ -6,14 +6,18 @@
  */
 package com.ibm.Actions;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import com.ibm.UI.ContactTabUI;
 import com.ibm.UI.HomePageUI;
 import com.ibm.UI.PortalUI;
 import com.ibm.UI.TTVConnectionManagementUI;
-import org.openqa.selenium.*;
-import org.testng.Assert;
-
-import java.util.List;
 
 /**
  * The Class TTVConnectionManagementAction.
@@ -379,7 +383,7 @@ public class TTVConnectionManagementAction extends BaseAction {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-		
+
 		performRefresh();
         expWait.waitForHomePageSipperToDisapper();
         expWait.waitForDomToLoad();

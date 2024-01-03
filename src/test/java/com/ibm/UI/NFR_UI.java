@@ -138,7 +138,7 @@ public class NFR_UI extends BaseUIPage {
      */
     @FindBy(xpath = "(//*[@title='Line Items List Applet']//*[contains(@id,'EPIC_Month')])[3]")
     public WebElement txtBox_Month_NFR_Item;
-	
+
     /**
      * The btn Submit.
      */

@@ -71,7 +71,7 @@ public class Resultspro {
 
 	/**
 	 * Send results mail.
-	 * 
+	 *
 	 * @throws Exception
 	 *             the exception
 	 */
@@ -100,7 +100,7 @@ public class Resultspro {
 
 	/**
 	 * Gets the session.
-	 * 
+	 *
 	 * @return the session
 	 */
 	public Session getSession() {
@@ -117,7 +117,7 @@ public class Resultspro {
 
 	/**
 	 * Sets the body text.
-	 * 
+	 *
 	 * @return the string
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
@@ -147,7 +147,7 @@ public class Resultspro {
 
 	/**
 	 * Sets the mail subject.
-	 * 
+	 *
 	 * @return the string
 	 */
 	private String setMailSubject() {
@@ -164,7 +164,7 @@ public class Resultspro {
 
 	/**
 	 * Sets the mail recipient.
-	 * 
+	 *
 	 * @param message
 	 *            the new mail recipient
 	 */
@@ -184,7 +184,7 @@ public class Resultspro {
 
 	/**
 	 * Sets the attachement.
-	 * 
+	 *
 	 * @return the multipart
 	 * @throws Exception
 	 *             the exception
@@ -210,7 +210,7 @@ public class Resultspro {
 
 	/**
 	 * Gets the test name.
-	 * 
+	 *
 	 * @return the test name
 	 */
 	private String getTestName() {
@@ -231,19 +231,19 @@ public class Resultspro {
 
 	/**
 	 * Gets the file path.
-	 * 
+	 *
 	 * @return the file path
 	 */
 	public void getFilePath() {
 		File folder = new File("./target/surefire-reports");
 		String[] fileNames = folder.list();
 		int total = 0;
-		for (int i = 0; i < fileNames.length; i++) {
-			if (fileNames[i].contains(".txt")) {
+		for (String fileName : fileNames) {
+			if (fileName.contains(".txt")) {
 				total++;
 				// System.out.println("total is" + total);
 				assert total == 1;
-				textFile1 = fileNames[i];
+				textFile1 = fileName;
 				// System.out.println("The filename is:" + textFile1);
 			}
 		}
@@ -251,7 +251,7 @@ public class Resultspro {
 
 	/**
 	 * Test set result.
-	 * 
+	 *
 	 * @return the string
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.

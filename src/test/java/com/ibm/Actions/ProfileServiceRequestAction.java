@@ -6,6 +6,21 @@
  */
 package com.ibm.Actions;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+
 import com.aventstack.extentreports.Status;
 import com.ibm.UI.ContactTabUI;
 import com.ibm.UI.HomePageUI;
@@ -13,16 +28,6 @@ import com.ibm.UI.ProfileServiceRequestUI;
 import com.ibm.Utilities.AadharGenie;
 import com.ibm.Utilities.LoggerWriter;
 import com.ibm.Utilities.Utilities;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * The Class ProfileServiceRequestAction.
@@ -494,7 +499,7 @@ public class ProfileServiceRequestAction extends BaseAction {
         // to open new tab
         ((JavascriptExecutor) driver).executeScript("window.open()");
         // to handle multiple tabs and switch between the tabs
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1)); // switches to new tab
         //navigate to MDM url
         driver.get(uRL);
@@ -737,7 +742,7 @@ public class ProfileServiceRequestAction extends BaseAction {
         } else {
             System.out.println(transactionType + " status for " + transactionSubType + " : " + SRStatus);
         }
-		
+
 		//when aadhar seeding fail
         if(!SRStat.equals(SRStatus)){
             System.out.println("AadharEntryWasDeletedFromSystemEnv!!");
@@ -789,7 +794,7 @@ public class ProfileServiceRequestAction extends BaseAction {
         expWait.waitForHomePageSipperToDisapper();
         expWait.waitForDomToLoad();
     }
-	
+
 	/**
      * Adds the attachment for aadhar.
      *
@@ -824,7 +829,7 @@ public class ProfileServiceRequestAction extends BaseAction {
 
         //Switching to Attachment Frame.
         //ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//*[contains(@title,'Manage SR Attachments')]//iframe"));
-        ExpectedConditions.frameToBeAvailableAndSwitchToIt((WebElement) driver.findElement(By.xpath("//*[contains(@title,'Manage SR Attachments')]//iframe")));
+        ExpectedConditions.frameToBeAvailableAndSwitchToIt(driver.findElement(By.xpath("//*[contains(@title,'Manage SR Attachments')]//iframe")));
         //driver.switchTo().frame((WebElement) driver.findElement(By.xpath("//*[contains(@title,'Manage SR Attachments')]//iframe")));
         expWait.waitLong(4);
         driver.findElement(By.xpath("//a[text()='New']")).click();
@@ -925,7 +930,7 @@ public class ProfileServiceRequestAction extends BaseAction {
         expWait.waitForDomToLoad();
         expWait.waitForHomePageSipperToDisapper();
     }
-	
+
 	/*
      * COMMON functions
      *************************************************/
@@ -1156,7 +1161,8 @@ public class ProfileServiceRequestAction extends BaseAction {
      */
     public void FODecisionGrievance() {
         //Login to FO.
-        ArrayList<String> tabs = loginAction.loginFO();
+        @SuppressWarnings("unchecked")
+		ArrayList<String> tabs = loginAction.loginFO();
 
         profileSRPage.get_nameInboxItem(SRGrievance).isDisplayed();
         profileSRPage.get_nameInboxItem(SRGrievance).click();

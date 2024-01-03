@@ -1,7 +1,5 @@
 package com.ibm.automation;
 
-import com.ibm.Utilities.Utilities;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -70,7 +68,7 @@ public class TestMain {
 			// To find data with column name
 			// otp = myResultSet.getString("OTP");
 
-			if (boolExtractOTP == false) {
+			if (!boolExtractOTP) {
 				otp = s1;
 			} else {
 				otp = extractOTP(s1);

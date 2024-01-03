@@ -10,12 +10,23 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import com.ibm.Actions.*;
-import com.ibm.Mobile.Actions.MobileAction;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import com.ibm.Actions.AccountsTabAction;
+import com.ibm.Actions.ContactTabAction;
+import com.ibm.Actions.HomePageActions;
+import com.ibm.Actions.LoginActions;
+import com.ibm.Actions.LokamActions;
+import com.ibm.Actions.PartnerEmployeeActions;
+import com.ibm.Actions.PetChemActions;
+import com.ibm.Actions.PortalActions;
+import com.ibm.Actions.ProfileServiceRequestAction;
+import com.ibm.Actions.RetailAction;
+import com.ibm.Actions.SVAgainstTVAction;
+import com.ibm.Actions.TTVConnectionManagementAction;
+import com.ibm.Actions.UjvalaCustomerOnboardingActions;
+import com.ibm.Mobile.Actions.MobileAction;
 import com.ibm.Utilities.LoggerWriter;
 import com.ibm.Utilities.Utilities;
 
@@ -77,6 +88,10 @@ public class TestSessionInitiator {
 	/*The Portal*/
 	public PortalActions portalPage;
 
+	/****** Reshma K******/
+	/*The Petchem Page */
+	public PetChemActions petChemPage;
+
 	public MobileAction mobileActions;
 
 	/**
@@ -104,6 +119,7 @@ public class TestSessionInitiator {
 		lokamPage = new LokamActions(driver);
 		retailPage = new RetailAction(driver);
 		portalPage = new PortalActions(driver);
+		petChemPage = new PetChemActions(driver);
 	}
 
 	/**
@@ -113,23 +129,23 @@ public class TestSessionInitiator {
 		wdfactory = new WebDriverFactory();
 		testInitiator();
 	}
-	
+
 	public TestSessionInitiator(String mobile) {
 		_launchEmulator();
 		wdfactory = new WebDriverFactory();
 		testInitiatorMobile();
 	}
-	
+
 	public void _launchEmulator() {
 		try {
-			Process p = Runtime.getRuntime().exec("emulator -avd IOCL -gpu host");
+			Process p = Runtime.getRuntime().exec("emulator -avd emulatortest1 -gpu host");
 			Thread.sleep(5000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	private void testInitiatorMobile() {
 		_configureMobile();
 		_initPageMobile();
@@ -152,7 +168,7 @@ public class TestSessionInitiator {
 		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
 		LoggerWriter._initdriver(driver);
 	}
-	
+
 	private void _configureMobile() {
 		mobileDriver = wdfactory.getMobileDriver();
 		mobileDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -174,7 +190,7 @@ public class TestSessionInitiator {
 		mobileActions = new MobileAction(mobileDriver);
 
 	}
-	
+
 	/**
 	 * Open url.
 	 *
@@ -203,7 +219,7 @@ public class TestSessionInitiator {
 			driver.quit();
 		}
 	}
-	
+
 	public void closeMobileSession() {
 		mobileDriver.removeApp("cx.indianoil.in");
 		mobileDriver.quit();

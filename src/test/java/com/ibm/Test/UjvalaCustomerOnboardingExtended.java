@@ -13,7 +13,7 @@ import com.ibm.automation.TestSessionInitiator;
  * The Class UjvalaCustomerOnboarding.
  */
 public class UjvalaCustomerOnboardingExtended extends SuperTest {
-	
+
 	/** The test. */
 	static TestSessionInitiator test = new TestSessionInitiator();
 
@@ -52,7 +52,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC02_NavigateToContactTab() {
-		
+
 		test.contactPage.naviagteToContactTab();
 	}
 
@@ -61,7 +61,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC03_createNewContact() {
-		
+
 		test.contactPage.createNewContact();
 	}
 
@@ -70,7 +70,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC04_enterNewCustomerInformation() {
-		
+
 		test.contactPage.enterNewCustomerInformation(test.getYamlVal("UjvalaCustomer.Salutation"), test.getYamlVal("UjvalaCustomer.FirstName"),
 				test.getYamlVal("UjvalaCustomer.LastName"), test.getYamlVal("UjvalaCustomer.Gender"), test.getYamlVal("UjvalaCustomer.DOB"));
 	}
@@ -80,7 +80,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC05_addNewAddress() {
-		
+
 		test.contactPage.addNewAddress(test.getYamlVal("UjvalaCustomer.Address.Line1"), test.getYamlVal("UjvalaCustomer.Address.Line2"),
 				test.getYamlVal("UjvalaCustomer.Address.Line3"), test.getYamlVal("UjvalaCustomer.Address.Area"),
 				test.getYamlVal("UjvalaCustomer.Address.PinCode"), test.getYamlVal("UjvalaCustomer.Address.City"),
@@ -92,7 +92,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC06_addIdentitiesForNewCustomer() {
-		
+
 		test.contactPage.addIdentitiesForNewCustomer(test.getYamlVal("UjvalaCustomer.Identities.IdentityType"),
 				test.getYamlVal("UjvalaCustomer.Identities.IdentityMethod"), test.getYamlVal("UjvalaCustomer.Identities.IdentityNumber"));
 		test.contactPage.addIdentitiesForNewCustomerAadhar(test.getYamlVal("NewCustomer.Identities.IdentityType"),
@@ -104,7 +104,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC08_enterBPLForNewCustomer() {
-		
+
 		test.contactPage.enterBPLForNewCustomer(test.getYamlVal("UjvalaCustomer.BPL"));
 	}
 
@@ -113,7 +113,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC09_performContactDedup() {
-		
+
 		test.contactPage.performContactDedup();
 		test.contactPage.navigateToPaymentProfile();
 		test.contactPage.addPaymentBankDetails();
@@ -125,7 +125,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC10_navigateToUjjwalaConnectionSummary() {
-		
+
 		test.contactPage.navigateToUjjwalaConnectionSummary();
 	}
 
@@ -134,7 +134,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC11_createNewRealationShip() {
-		
+
 		test.ujvalaActions.createNewRelationShipUjvala();
 	}
 
@@ -143,7 +143,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC12_addHouseHold() {
-		
+
 		test.ujvalaActions.addHouseHold();
 	}
 
@@ -153,7 +153,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC14_addIdentityRationCard() {
-		
+
 		test.ujvalaActions.addNewIdentity();
 		test.ujvalaActions.addIdentityRationCard();
 	}
@@ -163,7 +163,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC15_addIdentityInternalUjvala() {
-		
+
 		test.ujvalaActions.addNewIdentity();
 		test.ujvalaActions.addIdentityInternalUjvala();
 	}
@@ -173,7 +173,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC16_addIdentityInternalUjvalaCertificate() {
-		
+
 		test.ujvalaActions.addNewIdentity();
 		test.ujvalaActions.addIdentityInternalUjvalaCertificate();
 		test.ujvalaActions.performSave();
@@ -184,7 +184,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC17_addAttachmentForAadharRationAndPointExclusionDeclaration() {
-		
+
 		test.ujvalaActions.addAttachmentForAadhar("Aadhaar");
 		test.ujvalaActions.addAttachmentForAadhar("Ration Card");
 		test.ujvalaActions.addAttachmentForAadhar("Point Exclusion Declaration");
@@ -196,7 +196,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC18_addPaymentBankDetails() {
-		
+
 		test.ujvalaActions.releaseWaitState(test.getYamlVal("environment"));
 		test.contactPage.navigateToPaymentProfile();
 	}
@@ -206,7 +206,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC19_drillDownRelationShip() {
-		
+
 		test.contactPage.navigateToUjjwalaConnectionSummary();
 		test.ujvalaActions.performSave();
 		test.ujvalaActions.drillDownRelationShip();
@@ -217,7 +217,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC20_relationShipDrillDownAndSetScheme() {
-		
+
 		test.ujvalaActions.relationShipDrillDownAndSetScheme(test.getYamlVal("UjvalaCustomer.RelationShipSchemeExtended.Scheme"),
 				test.getYamlVal("UjvalaCustomer.RelationShipSchemeExtended.SchemeType"), test.getYamlVal("UjvalaCustomer.RelationShipSchemeExtended.SubType"),
 				"Ujjwala - 14.2 Kg General Package", test.getYamlVal("UjvalaCustomer.RelationShipSchemeExtended.ServiceArea"));
@@ -228,7 +228,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC21_navigateToDocumentAndCreateDocument() {
-		
+
 		test.contactPage.navigateToDocumentAndCreateDocument(test.getYamlVal("UjvalaCustomer.Document.Type"),
 				test.getYamlVal("UjvalaCustomer.Document.SubType"));
 	}
@@ -238,7 +238,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC22_createdLineItems() {
-		
+
 		test.ujvalaActions.createdLineItems(test.getYamlVal("UjvalaCustomer.Loan"));
 	}
 
@@ -247,7 +247,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC23_submitDocument() {
-		
+
 		test.contactPage.submitDocument();
 	}
 
@@ -256,7 +256,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC24_invoiceDocument() {
-		
+
 		test.contactPage.invoiceDocument();
 	}
 
@@ -265,7 +265,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC25_verifyInstallation() {
-		
+
 		test.contactPage.verifyInstallation();
 		relNumber = test.ujvalaActions.get_RelationShipNumber();
 	}
@@ -275,7 +275,7 @@ public class UjvalaCustomerOnboardingExtended extends SuperTest {
 	 */
 	@Test
 	public void TC26_verifyRelationshipStatus() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 		test.contactPage.verifyRelationShipStatus(relNumber);

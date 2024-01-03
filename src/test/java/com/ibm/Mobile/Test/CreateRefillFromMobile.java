@@ -1,20 +1,16 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.Mobile.Test;
 
-import java.io.IOException;
-
 import org.apache.commons.lang3.StringUtils;
-import org.monte.screenrecorder.ScreenRecorder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.ibm.Mobile.UI.MobileUI;
 import com.ibm.Utilities.ScreenRecorderUtil;
 import com.ibm.Utilities.Utilities;
 import com.ibm.automation.SuperTest;
@@ -25,14 +21,14 @@ import com.ibm.automation.TestSessionInitiator;
  * The Class Customer On-boarding SBC.
  */
 public class CreateRefillFromMobile extends SuperTest {
-	
+
 	/** The test. */
 	TestSessionInitiator test;
 	/** The logger. */
 //	static ExtentTest logger;
 	/** The relationship number. */
 	String relNumber;
-	
+
 
 	/**
 	 * Test Case 00 set up.
@@ -43,38 +39,38 @@ public class CreateRefillFromMobile extends SuperTest {
 		System.out.println("***********Before Class ********");
 		System.out.println();
 		Utilities.setYamlFilePath("integration_testData.yml");
-		
+
 	}
 
 	/**
 	 * Test Case 01 enter login info.
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	@Test
 	public void TC00_LaunchEmulator() throws Exception {
 		ScreenRecorderUtil.startRecord("TC00_LaunchEmulator");
-		Utilities.LaunchEmulator();		
+		Utilities.LaunchEmulator();
 	}
-	
+
 	@Test
 	public void TC01_SetUpEmulatorSession() {
 		test = new TestSessionInitiator("mobile");
-		
+
 	}
-	
+
 	@Test
 	public void TC02_loginToMobileApp() {
 		test.mobileActions.loginToInformation();
-		
+
 	}
-	
+
 	@Test
 	public void TC03_1_orderCylinerFromApp() {
-		test.mobileActions.orderCylinder(); 
+		test.mobileActions.orderCylinder();
 		test.mobileActions.onlinePaymnet();
 		relNumber = "7200000000012316";
 	}
-	
+
 	@Test
 	public void TC03_2_closeEmulator() {
 		test.closeMobileSession();
@@ -88,8 +84,8 @@ public class CreateRefillFromMobile extends SuperTest {
 		test.homePage.verifyHomePageDisplay();
 		//test.contactPage.naviagteToContactTab();
 	}
-	
-	
+
+
 
 	@Test
 	public void TC05_SearchForRelationShip() {
@@ -166,7 +162,7 @@ public class CreateRefillFromMobile extends SuperTest {
 
 	/**
 	 * Tear down session.
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	@AfterClass
 	public void tearDownSession() throws Exception {

@@ -1,11 +1,12 @@
 package com.ibm.Test.Retail.FOToursAndMeetings;
 
-import com.ibm.Utilities.Utilities;
-import com.ibm.automation.SuperTest;
-import com.ibm.automation.TestSessionInitiator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.ibm.Utilities.Utilities;
+import com.ibm.automation.SuperTest;
+import com.ibm.automation.TestSessionInitiator;
 
 /**
  * The FO Tour class.

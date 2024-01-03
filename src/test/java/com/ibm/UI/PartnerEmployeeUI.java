@@ -81,7 +81,7 @@ public class PartnerEmployeeUI extends BaseUIPage {
     /**
      * The hyperlink for Site Name.
      */
-   
+
 	/*@FindBy(xpath = "(//*[@title='Sites List Applet']//a[contains(@name, 'Site Name')])[2]")
     public WebElement lnk_SiteName;*/
 	 public WebElement getLink_SiteName(String siteName){

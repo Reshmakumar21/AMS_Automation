@@ -1,11 +1,12 @@
 package com.ibm.Test.Portal;
 
-import com.ibm.Utilities.Utilities;
-import com.ibm.automation.SuperTest;
-import com.ibm.automation.TestSessionInitiator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.ibm.Utilities.Utilities;
+import com.ibm.automation.SuperTest;
+import com.ibm.automation.TestSessionInitiator;
 
 /**
  * The Class Customer Portal Refill.
@@ -20,7 +21,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC 00 set up.
      */
-    @BeforeClass
+    @BeforeClass(alwaysRun=true)
     public void TC00_SetUp() throws Exception {
         Utilities.setYamlFilePath("integration_testData.yml");
         test = new TestSessionInitiator();
@@ -29,7 +30,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC enter login info.
      */
-    @Test
+    @Test(priority = 1)
     public void TC01_EnterLoginInfo() {
         test.launchApplication(test.getYamlVal("" + test.getYamlVal("environment")
                 + ".Portal.Customer.URL"));
@@ -37,13 +38,13 @@ public class CustomerRefill extends SuperTest {
                         + ".Portal.Customer.UserName"),
                 test.getYamlVal("" + test.getYamlVal("environment")
                         + ".Portal.Customer.Password"));
-        test.login.clickOnSighInButton();
+//        test.login.clickOnSighInButton();
     }
 
     /**
      * TC customer navigate to LPG link.
      */
-    @Test
+    @Test(priority = 2)
     public void TC02_NavigateToLPGLink() {
         test.portalPage.navigateToLPGLink();
     }
@@ -51,7 +52,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC customer navigate to book your cylinder link.
      */
-    @Test
+    @Test(priority = 3)
     public void TC03_NavigateToBookCylinder() {
         test.portalPage.navigateToBookCylinder();
     }
@@ -59,7 +60,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC customer selects the refill product.
      */
-    @Test
+    @Test(priority = 4)
     public void TC04_SelectRefillCylinderRequestForProduct() {
         test.portalPage.customerSelectProduct("LPG Refill - 14.2 Kg");
     }
@@ -67,7 +68,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC customer click the book now button.
      */
-    @Test
+    @Test(priority = 5)
     public void TC05_CustomerBookNow() {
         test.portalPage.customerBookNow();
     }
@@ -75,7 +76,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC customer accept terms & conditions.
      */
-    @Test
+    @Test(priority = 6)
     public void TC06_CustomerAcceptTermsAndConditions() {
         test.portalPage.customerAcceptTermsAndCondition();
     }
@@ -83,7 +84,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC customer PAY.
      */
-    @Test
+    @Test(priority = 7)
     public void TC07_CustomerAcceptsPAY() {
         test.portalPage.customerPAY();
     }
@@ -91,7 +92,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC confirmation message validation.
      */
-    @Test
+    @Test(priority = 8)
     public void TC08_ConfirmationMessageValidation() {
         test.portalPage.confirmationMessageValidation();
     }
@@ -99,7 +100,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC customer select a payment gateway.
      */
-    @Test
+    @Test(priority = 9)
     public void TC09_CustomerSelectPaymentGateway() {
         test.portalPage.customerSelectPaymentGateway("AvenuesTest");
     }
@@ -107,7 +108,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC confirmation message validation.
      */
-    @Test
+    @Test(priority = 10)
     public void TC10_CustomerLogsOut() {
         test.portalPage.customerLogOut();
     }
@@ -115,7 +116,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC siebel login.
      */
-    @Test
+    @Test(priority = 11)
     public void TC11_SiebelLogin() {
         test.portalPage.siebelLogin();
     }
@@ -123,7 +124,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * TC siebel Validation.
      */
-    @Test
+    @Test(priority = 12)
     public void TC12_SiebelValidations() {
         test.portalPage.siebelValidationsRefill("Invoiced");
     }
@@ -131,7 +132,7 @@ public class CustomerRefill extends SuperTest {
     /**
      * Tear down session.
      */
-    @AfterClass
+    @AfterClass(alwaysRun=true)
     public void tearDownSession() {
         test.closeBrowserSession();
     }

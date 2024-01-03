@@ -175,7 +175,7 @@ public class LokamActions extends BaseAction{
         expWait.waitForHomePageSipperToDisapper();
 
         //flag comparison to true in case of lead creation for corporate
-        if (flagCorporate == true) {
+        if (flagCorporate) {
             inputIndustryDetails();
         }
         //Add Lead Source
@@ -243,7 +243,7 @@ public class LokamActions extends BaseAction{
         expWait.waitForDomToLoad();
         optId = lokamTab.txt_OpportunityId.getAttribute("value");
 
-        if (flagAccount == true) {
+        if (flagAccount) {
             lokamTab.txtBox_Site.findElement(By.xpath("following-sibling::span")).click();
             expWait.waitForHomePageSipperToDisapper();
             expWait.waitForDomToLoad();
@@ -262,7 +262,7 @@ public class LokamActions extends BaseAction{
      */
     public void validateRelationShipStatus() {
         String relID, relType, relStatus, relSubStatus;
-        if (flagAccount == true) {
+        if (flagAccount) {
             relID = lokamTab.txt_RelationshipRelationShipNumber.getText();
             System.out.println(relID);
             relType = lokamTab.txt_RelationshipType.getText();

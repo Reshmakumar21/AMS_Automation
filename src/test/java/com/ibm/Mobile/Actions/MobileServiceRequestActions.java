@@ -1,34 +1,23 @@
 package com.ibm.Mobile.Actions;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.ibm.Actions.BaseAction;
 import com.ibm.Actions.LoginActions;
 import com.ibm.Actions.ProfileServiceRequestAction;
 import com.ibm.Mobile.UI.MobileUI;
 import com.ibm.UI.ContactTabUI;
 import com.ibm.UI.HomePageUI;
-import com.ibm.UI.PortalUI;
 import com.ibm.UI.ProfileServiceRequestUI;
 import com.ibm.Utilities.SeleniumWait;
 import com.ibm.automation.DBConnection;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-
 public class MobileServiceRequestActions extends BaseAction {
-	
 
-	
+
+
     protected MobileUI mobileUI;
-    
+
     protected DBConnection DBconnection;
     /**
      * The contact tab.
@@ -62,9 +51,9 @@ public class MobileServiceRequestActions extends BaseAction {
 	        this.driver = driver;
 	    }
 		// TODO Auto-generated constructor stub
-	
 
-    
+
+
 
 	/** The driver. */
 	WebDriver driver;
@@ -75,22 +64,22 @@ public class MobileServiceRequestActions extends BaseAction {
 	 * Instantiates a new login page UI.
 	 *
 	 * @param driver the driver
-     * @return 
+     * @return
 	 */
 	public void MobileUI(WebDriver driver) {
 		this.driver = driver;
 		expWait = new SeleniumWait(driver);
 	}
-    
+
     /**
      * new phone number generated.
      */
     String phoneNumber;
-    
+
     public void inputValueOfServiceRequest(String valueOfServiceRequest) {
         mobileUI.AddMobileNo().sendKeys(valueOfServiceRequest);
     }
-	
+
 	/**
      * Customer Input new Mobile number.
      */
@@ -99,7 +88,7 @@ public class MobileServiceRequestActions extends BaseAction {
         System.out.println("MOBILE_NUMBER: " + phoneNumber);
         inputValueOfServiceRequest(phoneNumber);
     }
-    
+
     /**
      * Customer input the OTP received in the updated mobile number.
      */
@@ -118,7 +107,7 @@ public class MobileServiceRequestActions extends BaseAction {
         System.out.println("OTP: " + otp);
         mobileUI.EnterOTP().sendKeys(otp);
 
-        
+
     }
 
 

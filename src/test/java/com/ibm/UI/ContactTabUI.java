@@ -96,6 +96,10 @@ public class ContactTabUI extends BaseUIPage {
 	@FindBy(xpath = "//*[@title='Contact Addresses List Applet']//*[contains(@aria-labelledby,'Street_Address')]")
 	public WebElement txtBox_Address;
 
+	/** The txt box local body. */
+	@FindBy(xpath = "//*[@title='Contact Addresses List Applet']//*[contains(@aria-label,'Local Body')]")
+	public WebElement txtBox_LocalBody;
+
 	/** The txt box city. */
 	@FindBy(xpath = "//*[@title='Contact Addresses List Applet']//*[contains(@aria-label,'City')]")
 	public WebElement txtBox_City;
@@ -103,7 +107,7 @@ public class ContactTabUI extends BaseUIPage {
 	/** The txt box rural. */
 	@FindBy(xpath = "//*[@title='Contact Addresses List Applet']//*[contains(@aria-label,'Rural')]")
 	public WebElement txtBox_Rural;
-	
+
 	/** The chk box primary address. */
 	@FindBy(xpath = "//*[@title='Contact Addresses List Applet']//*[@aria-labelledby='SSA_Primary_Field_Label']")
 	public WebElement chkBox_PrimaryAddress;
@@ -153,6 +157,42 @@ public class ContactTabUI extends BaseUIPage {
 	/** The dropdown BPL. */
 	@FindBy(xpath = "//*[@title='Contact Form Applet']//*[contains(@aria-labelledby,'_BPL')]")
 	public WebElement dropdown_BPL;
+
+	/** The icon add phone. */
+	@FindBy(xpath = "//*[contains(@aria-labelledby,'Alternate_Phone_#_Label')]/..//span")
+	public WebElement icon_addPhone;
+
+	/** The btn phone new button. */
+	@FindBy(xpath = "//*[@title='Phone List Applet']//button[@data-display='New']")
+	public WebElement btn_PhoneNewButton;
+
+	/** The txt phone no. */
+	@FindBy(xpath = "//*[@title='Phone List Applet']//input[@name='Address']")
+	public WebElement txt_PhoneNum;
+
+	/** The btn phone go. */
+	@FindBy(xpath = "//*[@title='Phone List Applet']//div[@class=\'siebui-btn-grp-search\']//button[@title='Phone:Go']")
+	public WebElement btn_PhoneGo;
+
+	/** The btn generate otp. */
+	@FindBy(xpath = "//button[@title='Phone:Generate OTP']")
+	public WebElement btn_GenerateOTP;
+
+	/** The box verify otp. */
+	@FindBy(xpath = "//td[contains(@id,'EPIC_Verify_OTP')]")
+	public WebElement box_VerifyOTP;
+
+	/** The txt verify otp. */
+	@FindBy(xpath = "//*[@title='Phone List Applet']//input[@name='EPIC_Verify_OTP']")
+	public WebElement txt_VerifyOTP;
+
+	/** The btn verify otp. */
+	@FindBy(xpath = "//button[@title='Phone:Verify OTP']")
+	public WebElement btn_VerifyOTP;
+
+	/** The btn phone ok. */
+	@FindBy(xpath = "//button[@title='Phone:OK']")
+	public WebElement btn_PhoneOk;
 
 	/** The btn contact dedup. */
 	@FindBy(xpath = "//*[@title='Contact Form Applet']//*[contains(@title,'Contact Dedup')]")
@@ -307,7 +347,7 @@ public class ContactTabUI extends BaseUIPage {
 	public WebElement pickIcon_ServiceArea;
 
 	/** The pick icon service area. */
-	@FindBy(xpath = "(//table[@summary='Service Area']//td[3])[3]")
+	@FindBy(xpath = "(//table[@summary='Service Area']//td[3])[2]")
 	public WebElement txt_ServiceAreaSearchResultSummary;
 
 	/** The btn service area OK button. */
@@ -433,8 +473,8 @@ public class ContactTabUI extends BaseUIPage {
 	/** The lnk installation order number. */
 	@FindBy(xpath = "//*[@title='Installation List Applet']//a[@name='EPIC Order Number']")
 	public WebElement lnk_InstallationOrderNumber;
-	
-	
+
+
 		/**********DAC FLAG CHECK*******/
 
 	@FindBy(xpath = "//*[@title='Sales Order Form Applet']//button[contains(@aria-label,'Disable DAC')]")
@@ -509,11 +549,11 @@ public class ContactTabUI extends BaseUIPage {
 	/** The txt payments settle. */
 	@FindBy(xpath = "//table[@summary='Payments']//*[text()='Settle']")
 	public WebElement txt_PaymentsSettle;
-	
+
 	/** The txt payments refund. */
 	@FindBy(xpath = "//table[@summary='Payments']//*[text()='Refund']")
 	public WebElement txt_PaymentsRefund;
-	
+
 	/** The txt payments refund Status. */
 	@FindBy(xpath = "//*[@title='Payments List Applet']//td[contains(@id,'EPIC_Payment_Status') and @title='Paid']")
 	public WebElement txt_PaymentsRefundStatus;
@@ -603,6 +643,19 @@ public class ContactTabUI extends BaseUIPage {
 	/** The txt inventory transactions type documents. */
 	@FindBy(xpath = "//*[@title='Inventory Transactions List Applet']//td[contains(@id,'Transaction_Type')]")
 	public WebElement txt_InventoryTransactionsType_Documents;
+
+	/** The CLDP button. */
+	@FindBy(xpath = "//button[@name=\"s_2_1_4_0\"]")
+	public WebElement CLDP_dedup;
+
+	/** The CLDP button. */
+	@FindBy(xpath = "//td[@id=\"1_s_3_l_Cash_Memo_Status\"]")
+	public WebElement invoice_open;
+
+	/** The CLDP button. */
+	@FindBy(xpath = "//input[@id=\"1_Cash_Memo_Status\"]")
+	public WebElement invoice_complete;
+
 
 	/**
 	 * Gets the search result promotion.

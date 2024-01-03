@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ibm.Mobile.Test.CancelRefillFromMobile2">
+      <class name="com.ibm.Test.PetChem.test1">
         <methods>
-          <include name="TC03_orderCylinerFromApp"/>
-          <include name="TC01_SetUpEmulatorSession"/>
-          <include name="TC00_SetUp"/>
+          <include name="TC01_EnterLoginInfo"/>
           <include name="afterSuperMasterCleanUp"/>
           <include name="afterMasterSetUp"/>
-          <include name="tearDownSession"/>
-          <include name="TC11_VerifyOrderDeatils"/>
-          <include name="TC04_openMenu"/>
-          <include name="TC10_openLatestOrder"/>
-          <include name="TC09_RelationShipDrillDown"/>
-          <include name="getResult"/>
-          <include name="TC05_openBookingHistory"/>
-          <include name="TC02_loginToMobileApp"/>
-          <include name="TC07_NavigateToContactTab"/>
           <include name="beforeMasterSetUp"/>
-          <include name="TC06_cancelOrder"/>
-          <include name="TC08_SearchForRelationShip"/>
+          <include name="getResult"/>
           <include name="beforeSuperMaterSetUp"/>
+          <include name="TC00_SetUp"/>
           <include name="beforeTestMethod"/>
         </methods>
-      </class> <!-- com.ibm.Mobile.Test.CancelRefillFromMobile2 -->
+      </class> <!-- com.ibm.Test.PetChem.test1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

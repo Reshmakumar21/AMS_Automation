@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.UI;
 
@@ -112,34 +112,34 @@ public class TTVConnectionManagementUI extends BaseUIPage {
 
 	@FindBy(xpath = "//a[text()='Invoice:']")
 	public WebElement lnk_InvoiceLinkNavigateBack;
-	
+
 
 	@FindBy(xpath = "//*[@title='Document Line items List Applet']//input[contains(@id,'Equipment_Promo')]")
 	public WebElement txtBox_EquipmentPromo;
-	
+
 	@FindBy(xpath = "//*[@title='Pick Promotion List Applet']//td[text()='Promotion']")
 	public WebElement lnk_PickPromotion;
-	
-	
+
+
 	@FindBy(xpath = "//*[@title='Pick Promotion List Applet']//*[@data-display='OK']")
 	public WebElement btn_PickPromotionOKButton;
-	
+
 	@FindBy(xpath = "(//*[@title='Document Line items List Applet']//td[contains(@id,'EPIC_Availability_Code')])[2]")
 	public WebElement btn_DestinationAvailabilityCode;
-	
-	
+
+
 
 			@FindBy(xpath = "//*[@title='Pick Bucket Category:OK']")
 			public WebElement btn_OKDestination;
-			
+
 
 			@FindBy(xpath = "(//*[contains(text(),'Defective')])[2]")
 			public WebElement btn_DestinationLineItem;
-	
-	
+
+
 
 	//*[@title='Pick Bucket Category:OK']
-	
+
 	/**
 	 * Gets the pick promotion from applet.
 	 *
@@ -150,27 +150,27 @@ public class TTVConnectionManagementUI extends BaseUIPage {
 	public WebElement get_PickPromotionFromApplet(String promotion) {
 		return driver.findElement(By.xpath("//*[@title='Pick Promotion List Applet']//*[text()='" + promotion + "']"));
 	}
-	
+
 	public List<WebElement> get_serialNumberList() {
 		return driver.findElements(By.xpath("//*[@title='Document Line items List Applet']//td[contains(@id,'Serial_Number')]"));
 	}
-	
+
 	public List<WebElement> get_TareWeight() {
 		return driver.findElements(By.xpath("//*[@title='Document Line items List Applet']//td[contains(@id,'EPIC_Tare_Weight')]"));
 	}
-	
-	
+
+
 	public List<WebElement> get_GrossWeight() {
 		return driver.findElements(By.xpath("//*[@title='Document Line items List Applet']//td[contains(@id,'EPIC_Gross_Weight')]"));
 	}
-	
+
 	public List<WebElement> get_RemarksWeight() {
 		return driver.findElements(By.xpath("//*[@title='Document Line items List Applet']//td[contains(@id,'EPIC_Remarks')]"));
 	}
-	
+
 	public List<WebElement> get_SealWeight() {
 		return driver.findElements(By.xpath("//*[@title='Document Line items List Applet']//td[contains(@id,'EPIC_Seal')]"));
 	}
-	
+
 
 }

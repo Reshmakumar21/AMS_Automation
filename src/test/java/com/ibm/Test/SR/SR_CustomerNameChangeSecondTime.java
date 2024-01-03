@@ -33,7 +33,7 @@ public class SR_CustomerNameChangeSecondTime extends SuperTest {
 
 		/**
 		 * TC 00 set up.
-		 * 
+		 *
 		 * @throws Exception
 		 */
 		@BeforeClass
@@ -64,130 +64,130 @@ public class SR_CustomerNameChangeSecondTime extends SuperTest {
 	 */
 	@Test
 	public void TC02_SearchForRelationShip() {
-		
+
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
 	}
 
 	@Test
 	public void TC03_LastNameDrillDown() {
-		
+
 		test.contactPage.afterRelationShipSearchClickOnLastName();
 	}
 
 	/* TC to store MDMuID value */
 	@Test
 	public void TC04_NavigateToMoreInfoTabToObtainMDM_UID() {
-		
+
 		test.profileSRPage.getMDMUID();
 	}
 
 	/* TC to clean existing SR statuses */
 	@Test @Ignore
 	public void TC05_CleanExistingSRStatuses() {
-		
+
 		test.profileSRPage.connectDBToUpdateAllSRStatusToClose(relNumber);
 	}
 
 	@Test
 	public void TC06_NavigateToProfileSR_Tab() {
-		
+
 		test.contactPage.navigateToProfileSRContactPage();
 	}
 
 	@Test
 	public void TC07_SelectTransactionType() {
-		
+
 		test.profileSRPage.selectTransactionType("Customer Name Correction");
 	}
 
 	@Test
 	public void TC08_DrillDownSRNumber() {
-		
+
 		test.profileSRPage.drillDownSRNumber();
 	}
 
 	@Test
 	public void TC09_NameChange() {
-		
+
 		test.profileSRPage.NameChange();
 	}
 
 	@Test
 	public void TC10_AddAttachment() {
-		
+
 		test.profileSRPage.addAttachment();
 	}
 
 	@Test
 	public void TC11_ClickSubmit() {
-		
+
 		test.profileSRPage.submitSR();
 	}
 
 	@Test
 	public void TC12_VerifyProfileSRStatus() {
-		
+
 		test.profileSRPage.verifySRStatus("Closed");
 	}
 
 	@Test
 	public void TC13_VerifyAmendment() {
-		
+
 		test.profileSRPage.verifyAmendment();
 	}
 
 	@Test
 	public void TC14_LastNameDrillDown() {
-		
+
 		test.contactPage.afterRelationShipSearchClickOnLastName();
 	}
 
 	@Test
 	public void TC15_NavigateToProfileSR_Tab() {
-		
+
 		test.contactPage.navigateToProfileSRContactPage();
 	}
 
 	@Test
 	public void TC16_selectTransactionType() {
-		
+
 		test.profileSRPage.selectTransactionType("Customer Name Correction");
 	}
 
 	@Test
 	public void TC17_DrillDownSRNumber() {
-		
+
 		test.profileSRPage.drillDownSRNumber();
 	}
 
 	@Test
 	public void TC18_NameChange() {
-		
+
 		test.profileSRPage.NameChange();
 	}
 
 	@Test
 	public void TC19_AddAttachment() {
-		
+
 		test.profileSRPage.addAttachment();
 	}
 
 	@Test
 	public void TC20_ClickSubmit() {
-		
+
 		test.profileSRPage.submitSR();
 	}
 
 	@Test
 	public void TC21_VerifyProfileSRStatus() {
-		
+
 		test.profileSRPage.verifySRStatus("Cancelled");
 	}
 
 	@Test
 	public void TC22_VerifyAmendment() {
-		
+
 		test.profileSRPage.verifyAmendmentSecondTimeNameChange();
 	}
 

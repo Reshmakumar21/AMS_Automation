@@ -1,8 +1,8 @@
-/* 
+/*
  * @author  Shivam Tiwari
  * @version 1.0
- * @since   2019-06-15 
- * 
+ * @since   2019-06-15
+ *
  */
 package com.ibm.Test.Refill;
 
@@ -30,10 +30,10 @@ public class CreateRefillOrder extends SuperTest {
 	/** The name. */
 	/**
 	 * TC 00 set up.
-	 * 
+	 *
 	 * @throws Exception
 	 */
-	@BeforeClass
+	@BeforeClass(alwaysRun=true)
 	public void TC00_SetUp() throws Exception {
 		Utilities.setYamlFilePath("integration_testData.yml");
 		test = new TestSessionInitiator();
@@ -48,7 +48,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 01 enter login info.
 	 */
-	@Test
+	@Test(priority = 1)
 	public void TC01_EnterLoginInfo() {
 		test.launchApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".URL"));
 		test.login.LoginToApplication(test.getYamlVal("" + test.getYamlVal("environment") + ".UserName"),
@@ -59,7 +59,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 02 search for relation ship.
 	 */
-	@Test
+	@Test(priority = 2)
 	public void TC02_SearchForRelationShip() {
 		test.homePage.launchRelationShipTab();
 		test.homePage.searchForRelationShipNumber(relNumber);
@@ -68,7 +68,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 03 relation ship drill down.
 	 */
-	@Test
+	@Test(priority = 3)
 	public void TC03_RelationShipDrillDown() {
 		test.homePage.openRelationShipFromSearchResult();
 	}
@@ -76,7 +76,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 04 create default order.
 	 */
-	@Test
+	@Test(priority = 4)
 	public void TC04_CreateDefaultOrder() {
 		test.homePage.createDefaultOrder();
 	}
@@ -84,7 +84,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 05 verify order details.
 	 */
-	@Test
+	@Test(priority = 5)
 	public void TC05_VerifyOrderDeatils() {
 		test.homePage.verifyOrderCreated();
 	}
@@ -92,7 +92,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 06 enter delivery boy information.
 	 */
-	@Test
+	@Test(priority = 6)
 	public void TC06_EnterDeliveryBoyInformation() {
 		test.homePage.enterDeliveryBoy();
 	}
@@ -100,7 +100,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 07 create invoice.
 	 */
-	@Test
+	@Test(priority = 7)
 	public void TC07_CreateInvoice() {
 		test.homePage.createInvoice();
 	}
@@ -108,7 +108,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 08 verify order deatils.
 	 */
-	@Test
+	@Test(priority = 8)
 	public void TC08_VerifyOrderDeatils() {
 		test.homePage.verifyInvoiceOrderDetails();
 	}
@@ -116,17 +116,17 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * TC 09 complete order.
 	 */
-	@Test
+	@Test(priority = 9)
 	public void TC09_CompleteOrder() {
 		test.homePage.completeInvoicedOrder();
 	}
 
-	@Test
+	@Test(priority = 10)
 	public void TC10_verifyInvertoryTransaction() {
 		test.contactPage.verifyInvertoryTransaction();
 	}
 
-	@Test
+	@Test(priority = 11)
 	public void TC11_verifyPaymentsTab() {
 		test.contactPage.verifyPaymentsTab();
 	}
@@ -134,7 +134,7 @@ public class CreateRefillOrder extends SuperTest {
 	/**
 	 * Tear down session.
 	 */
-	@AfterClass
+	@AfterClass(alwaysRun=true)
 	public void tearDownSession() {
 		test.closeBrowserSession();
 	}

@@ -17,7 +17,7 @@ class Authenticator extends javax.mail.Authenticator {
 
 	/**
 	 * Instantiates a new authenticator.
-	 * 
+	 *
 	 * @param username
 	 *            the username
 	 * @param password
@@ -32,6 +32,7 @@ class Authenticator extends javax.mail.Authenticator {
 	 *
 	 * @return the password authentication
 	 */
+	@Override
 	protected PasswordAuthentication getPasswordAuthentication() {
 		return authentication;
 	}
